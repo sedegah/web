@@ -43,7 +43,7 @@
     }
     .coverDiv .mainHeader .navItems > span {
         width: 100%; /* Make spans full width */
-        text-align: left; /* Align text left */
+        text-align: center; /* Center text */
     }
     .coverDiv .mainHeader .navItems > span > a {
         display: block; /* Make links block level */
