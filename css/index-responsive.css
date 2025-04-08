@@ -1,28 +1,66 @@
+/* Responsive Styles */
+
 @media screen and (max-width: 1000px) {
-   .divTwo .firstSec .courseSec, .divThree .firstSec .imgSec, .divFour .firstSec .subSec{
-      width: 45%;
+   /* Adjust flex-basis for slightly larger screens */
+   .divTwo .firstSec .courseSec,
+   .divThree .firstSec .imgSec,
+   .divFour .firstSec .subSec,
+   .divTeam .firstSec .teamMember, /* Added team member */
+   .divFive .firstSec .subSec {
+      flex-basis: 46%; /* Allow two columns */
+      min-width: 0; /* Reset min-width if needed */
    }
 
-   .divThree .firstSec .imgSec::after{
+   /* Keep overlay visible if design requires */
+   /* .divThree .firstSec .imgSec::after{
       top: 0%;
       opacity: 1;
-   }
+   } */
 }
 
 
 @media screen and (max-width: 900px) {
+   /* Keep hamburger menu logic */
    .coverDiv .mainHeader .navItems{
-      width: 0%;
+      width: 0%; /* Hide initially */
+      height: auto; /* Allow content height */
       position: absolute;
-      top: 80px;
+      top: 80px; /* Position below header */
       right: 0;
       flex-direction: column;
-      background-color: rgba(0, 0, 0, 0.5);
+      background-color: rgba(38, 70, 83, 0.95); /* Darker background for menu */
       backdrop-filter: blur(5px);
       padding-block: 20px;
-      transition: 0.5s;
-      z-index: 5;
+      transition: width 0.5s ease; /* Animate width for slide-in */
+      overflow: hidden; /* Hide overflow during transition */
+      z-index: 100; /* Ensure menu is on top */
+      border-bottom-left-radius: 10px; /* Optional styling */
    }
+    /* Style for when menu is shown via JS */
+    .coverDiv .mainHeader .navItems.active {
+        width: 250px; /* Adjust width as needed */
+        padding-inline: 20px; /* Add horizontal padding */
+    }
+    .coverDiv .mainHeader .navItems > span {
+        width: 100%; /* Make spans full width */
+        text-align: left; /* Align text left */
+    }
+    .coverDiv .mainHeader .navItems > span > a {
+        display: block; /* Make links block level */
+        padding: 15px 0; /* Adjust padding */
+        width: 100%;
+    }
+     /* Reset hover underline for mobile menu */
+    .coverDiv .mainHeader .navItems > span > a::after {
+        display: none;
+    }
+    .coverDiv .mainHeader .navItems > span:hover > a::after {
+        width: 0; /* Ensure no underline on hover */
+    }
+     .coverDiv .mainHeader .navItems > span > a:hover {
+         color: var(--accent-color); /* Keep hover color */
+     }
+
 
    .coverDiv .mainHeader .hamburgerIcon{
       display: flex;
@@ -30,178 +68,164 @@
 }
 
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 768px) { /* Common tablet breakpoint */
+    /* Adjust hero text size */
    .coverDiv .mainDiv .mainSec>h1{
-      font-size: 60px;
+      font-size: 2.5rem;
    }
-
    .coverDiv .mainDiv .mainSec>p{
-      font-size: 1.2rem;
+      font-size: 1.1rem;
+      width: 90%;
    }
 
-   .divTwo .firstSec .courseSec, .divThree .firstSec .imgSec, .divFour .firstSec .subSec{
-      width: 70%;
+    /* Stack cards to single column */
+   .divTwo .firstSec .courseSec,
+   .divThree .firstSec .imgSec,
+   .divFour .firstSec .subSec,
+   .divTeam .firstSec .teamMember,
+   .divFive .firstSec .subSec {
+      flex-basis: 80%; /* Wider single column */
+      min-width: 0; /* Reset min-width */
    }
 
-   .divFive .firstSec .subSec{
-      width: 77%;
+   .divFive .firstSec .subSec {
+      flex-basis: 90%; /* Testimonial slightly wider */
    }
 
-   .divFive .firstSec .subSec:first-child{
-      margin-left: 220%;
-   }
+   /* Adjust testimonial scroll margin if scroll snap was used */
+   /* .divFive .firstSec .subSec:first-child{ margin-left: ... } */
 
+   /* Adjust CTA heading */
+    .divSix .mainSec>h1 {
+        font-size: 1.8rem;
+    }
 }
 
 
 @media screen and (max-width: 600px){
+    /* Further reduce hero text size */
    .coverDiv .mainDiv .mainSec>h1{
-      font-size: 50px;
+      font-size: 2.2rem;
    }
+
+    /* Adjust general section padding */
+    .divProblem, .divTwo, .divSeven#about, .divTeam, .divThree, .divFour, .divFive, .divSeven#contact {
+        padding: 60px 15px; /* Less vertical padding */
+    }
+
+    /* Adjust general heading size */
+    .headingSec>h1 {
+        font-size: 1.9rem;
+    }
+    .headingSec>p {
+        font-size: 1rem;
+    }
 }
 
 
 @media screen and (max-width: 500px){
-   :root{
-      --rem2: 1.9rem; 
-      --rem1-3: 1.2rem;
-      --rem1-1: 1rem;
-      --rem1-05: 0.95rem;
-   }
+   /* Adjust root font sizes slightly if needed */
+   /* :root{ ... } */
 
    .coverDiv .mainHeader{
-      padding-inline: max(5%, 30px);
+      padding-inline: 20px; /* Less padding */
    }
 
    .coverDiv .mainDiv .mainSec>h1{
-      font-size: 43px;
+      font-size: 1.9rem;
    }
-
    .coverDiv .mainDiv .mainSec>p{
       font-size: 1rem;
+      width: 95%;
    }
 
-   .divTwo .firstSec .courseSec, .divThree .firstSec .imgSec, .divFour .firstSec .subSec{
-      width: 90%;
+   /* Ensure single column cards take more width */
+   .divTwo .firstSec .courseSec,
+   .divThree .firstSec .imgSec,
+   .divFour .firstSec .subSec,
+   .divTeam .firstSec .teamMember,
+   .divFive .firstSec .subSec {
+      flex-basis: 95%; /* Almost full width */
    }
 
-   .divTwo .firstSec .courseSec{
-      margin-bottom: 20px;
+   /* Add margin between stacked cards */
+   .divTwo .firstSec .courseSec,
+   .divThree .firstSec .imgSec,
+   .divFour .firstSec .subSec,
+   .divTeam .firstSec .teamMember,
+   .divFive .firstSec .subSec {
+      margin-bottom: 25px; /* Add bottom margin when stacked */
    }
+    .firstSec {
+        gap: 0; /* Remove gap if using margin */
+    }
 
+    .headingSec h1 {
+        font-size: 1.7rem;
+    }
 }
 
 
 @media screen and (max-width: 400px){
-   .coverDiv .mainHeader .logoSec>i{
-      font-size: x-large;
-   }
+   .coverDiv .mainHeader .logoSec img.logo {
+        width: 60px; /* Smaller logo */
+    }
 
    .coverDiv .mainHeader .logoSec>span{
       font-size: medium;
    }
-
    .coverDiv .mainHeader .hamburgerIcon>i{
       font-size: large;
    }
 
    .coverDiv .mainDiv .mainSec>h1{
-      font-size: 37px;
+      font-size: 1.7rem;
+   }
+   .coverDiv .mainDiv .mainSec>a {
+        padding: 10px 25px; /* Smaller button */
    }
 
-   .divTwo>section, .divThree>section, .divFour>section, .divFive>section, .divSeven>section{
-      width: 90%;
+   /* Adjust section width if needed */
+   .divTwo>section, .divThree>section, .divFour>section, .divFive>section, .divSeven>section {
+      width: 95%;
    }
 
+   /* Testimonial layout adjustments */
    .divFive .firstSec .subSec{
-      flex-direction: column-reverse;
+      flex-direction: column; /* Stack image and text */
+      align-items: center; /* Center items */
+      text-align: center;
    }
-
+   .divFive .firstSec .subSec .imgSec{
+      margin-right: 0;
+      margin-bottom: 15px; /* Space below image */
+   }
    .divFive .firstSec .subSec .quoteSec{
       width: 100%;
-
+      align-items: center;
    }
-
    .divFive .firstSec .subSec .quoteSec>p{
-      font-size: small;
+      font-size: 0.95rem;
+      padding-left: 0; /* Remove padding */
+      text-align: center;
    }
-
+   .divFive .firstSec .subSec .quoteSec>p::before {
+       display: none; /* Hide quote mark on small screens */
+   }
    .divFive .firstSec .subSec .imgSec{
-      margin-top: 5px;
+      width: 50px;
+      height: 50px;
    }
 
-   .divFive .firstSec .subSec .imgSec{
-      width: 40px;
-      height: 40px;
-   }
-
+    /* Footer social icons */
+    .divSeven#contact .firstSec>a {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+        margin: 0 5px; /* Less margin */
+    }
 }
 
 
-@media screen and (max-width:350px){
-   .coverDiv .mainHeader{
-      padding-inline: max(5%, 20px);
-   }
-
-   .coverDiv .mainDiv .mainSec>h1{
-      font-size: 32px;
-   }
-
-   .coverDiv .mainDiv .mainSec>p{
-      padding-block: 15px;
-   }
-
-   .coverDiv .mainDiv .mainSec>a{
-      padding: 8px 40px 8px;
-   }
-
-   .divTwo .firstSec .courseSec, .divThree .firstSec .imgSec, .divFour .firstSec .subSec{
-      width: 100%;
-   }
-
-}
-
-
-@media screen and (max-width:300px){
-   .coverDiv .mainDiv .mainSec>h1{
-      font-size: 30px;
-   }
-
-   .coverDiv .mainDiv .mainSec>p{
-      font-size: 1rem;
-   }
-
-   .coverDiv .mainDiv .mainSec>a{
-      padding: 7px 30px 7px;
-   }
-
-   .divSeven .firstSec>a{
-      margin-inline: 5px;
-   }
-
-}
-
-
-@media screen and (max-width:280px){
-   .coverDiv .mainDiv .mainSec>h1{
-      font-size: 28px;
-   }
-}
-
-
-
-
-@media screen and (max-height:400px){
-   .coverDiv .mainDiv .mainSec{
-      margin-block: 25%;
-   }
-
-   @keyframes topSlide {
-      from{margin-top: -20%; opacity: 0;}
-      to{margin-top: 25%; opacity: 1;}
-   
-      
-   }
-
-   
-}
+/* Reduced height adjustments, may not be needed */
+/* @media screen and (max-height:400px){ ... } */

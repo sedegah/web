@@ -1,13 +1,42 @@
+/* Added: Google Font Import */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght@400;500&display=swap');
+
 *{
    box-sizing: border-box;
    margin: 0;
    padding: 0;
-   overflow-x: hidden;
 }
 
+/* Modified: CSS Variables using Company Colors */
 :root{
-   --overlayColor: rgba(0, 0, 0, 0.7);
-   --rem2: 2rem; 
+   /* Company Colors (Estimates) */
+   --color-orange: #FF8C00;
+   --color-green: #9ACD32;
+   --color-blue-purple: #6A5ACD;
+   --color-magenta-purple: #9370DB;
+   --color-dark-bg: #262626; /* Dark background from logo image */
+
+   /* Theme Assignment */
+   --primary-color: var(--color-blue-purple); /* Using Blue/Purple as primary */
+   --accent-color-1: var(--color-orange);
+   --accent-color-2: var(--color-green);
+   --accent-color-3: var(--color-magenta-purple);
+
+   --background-light: #F8F9FA; /* Light background for body */
+   --background-dark: var(--color-dark-bg); /* Dark background for header/footer */
+
+   --text-on-light: var(--color-dark-bg); /* Dark text on light background */
+   --text-on-dark: #F0F0F0; /* Light text on dark background (slightly off-white) */
+   --text-grey: #555; /* For less prominent text */
+
+   --overlay-color: rgba(38, 38, 38, 0.7); /* Overlay using dark background color */
+
+   /* Fonts */
+   --font-heading: 'Poppins', sans-serif;
+   --font-body: 'Roboto', sans-serif;
+
+   /* Original Size Variables (Kept for consistency) */
+   --rem2: 2rem;
    --rem1-3: 1.3rem;
    --rem1-1: 1.1rem;
    --rem1-05: 1.05rem;
@@ -15,16 +44,28 @@
 
 html{
    scroll-behavior: smooth;
+   overflow-x: hidden;
 }
 
+/* Modified: Body styles with new colors */
 body{
-   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   font-family: var(--font-body);
+   font-size: 16px;
+   line-height: 1.6;
+   color: var(--text-on-light); /* Use dark text on light background */
+   background-color: var(--background-light); /* Use light background */
 }
 
+/* Modified: Base paragraph style */
 p{
-   color: gray;
+   color: var(--text-grey); /* Use text-grey variable */
+   margin-bottom: 1rem;
 }
 
+/* Added: Global transition for links and buttons */
+a, button {
+  transition: all 0.3s ease;
+}
 
 /* Div one starts ========================== */
 .coverDiv{
@@ -32,9 +73,22 @@ p{
    min-height: 100vh;
    display: flex;
    flex-direction: column;
-   background: url(../img/building-3.jpg) fixed no-repeat;
+   background: url(../img/heropicture2.jpg) fixed no-repeat; /* Keep hero image */
    background-position: center;
    background-size: cover;
+   position: relative;
+}
+
+/* Modified: Overlay color */
+.coverDiv::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--overlay-color); /* Use new overlay color */
+    z-index: 1;
 }
 
 .coverDiv .mainHeader{
@@ -43,9 +97,12 @@ p{
    display: flex;
    justify-content: space-between;
    align-items: center;
-   background-color: rgba(0, 0, 0, 0.7);
+   /* Modified: Removed header background */
+   background-color: transparent;
    padding-inline: max(5%, 50px);
    padding-top: 10px;
+   position: relative; /* Changed from absolute/fixed for flow */
+   z-index: 10; /* Ensure it's above the overlay */
 }
 
 .coverDiv .mainHeader .logoSec{
@@ -56,18 +113,22 @@ p{
    align-items: center;
 }
 
-.coverDiv .mainHeader .logoSec>i{
-   font-size: xx-large;
-   color: red;
-   overflow: hidden;
-}
-
+/* Modified: Logo text style */
 .coverDiv .mainHeader .logoSec>span{
-   font-family: Verdana, Geneva, Tahoma, sans-serif;
+   font-family: var(--font-heading);
    font-weight: bold;
-   color: white;
+   color: var(--text-on-dark); /* Use light text on potentially dark image */
    padding-left: 5px;
    font-size: large;
+    /* Added: Subtle text shadow for readability */
+   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+}
+
+.coverDiv .mainHeader .logoSec img.logo {
+    width: 80px;
+    height: auto;
+     /* Added: Filter for potential readability on image */
+    filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.6));
 }
 
 .coverDiv .mainHeader .navItems{
@@ -88,34 +149,45 @@ p{
 }
 
 .coverDiv .mainHeader .navItems>span>a{
-   color: white;
+   color: var(--text-on-dark); /* Light text */
    text-decoration: none;
    padding: 10px 15px 10px;
-   font-weight: bold;
+   font-weight: 600;
+   font-family: var(--font-heading);
+    /* Added: Subtle text shadow for readability */
+   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
 }
 
+/* Modified: Nav link hover underline color */
 .coverDiv .mainHeader .navItems>span>a::after{
    content: " ";
    width: 0%;
-   height: 5%;
-   background-color: red;
+   height: 3px;
+   background-color: var(--accent-color-1); /* Use Orange accent */
    position: absolute;
-   bottom: 0;
-   right: 0%;
-   transition: 0.5s;
+   bottom: 5px;
+   left: 15px;
+   transition: width 0.3s ease;
 }
 
 .coverDiv .mainHeader .navItems>span:hover>a::after{
-   left: 0%;
-   width: 95%;
+   width: calc(100% - 30px);
+}
+
+/* Modified: Nav link hover text color */
+.coverDiv .mainHeader .navItems>span>a:hover {
+    color: var(--accent-color-1); /* Orange accent on hover */
 }
 
 .coverDiv .mainHeader .hamburgerIcon{
    display: none;
    width: auto;
    height: auto;
-   color: white;
+   color: var(--text-on-dark); /* Light icon color */
    overflow: hidden;
+   cursor: pointer;
+    /* Added: Subtle text shadow for readability */
+   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
 }
 
 .coverDiv .mainHeader .hamburgerIcon>i{
@@ -127,106 +199,98 @@ p{
    display: flex;
    justify-content: center;
    align-items: center;
-   min-height: calc(100vh - 80px);
-   background-color: rgba(0, 0, 0, 0.7);
+   flex-grow: 1;
    position: relative;
+   z-index: 2; /* Ensure it's above overlay */
+   padding: 20px;
 }
 
 .coverDiv .mainDiv .mainSec{
-   width: 80%;
+   width: 90%;
+   max-width: 1000px;
    height: auto;
    display: flex;
    justify-content: center;
    align-items: center;
    flex-direction: column;
-   color: white;
+   color: var(--text-on-dark); /* Light text */
    animation: topSlide 1s ease-out;
 }
 
 @keyframes topSlide {
    from{margin-top: -20%; opacity: 0;}
    to{margin-top: 0%; opacity: 1;}
-
-   
 }
 
+/* Modified: Hero Heading */
 .coverDiv .mainDiv .mainSec>h1{
-   font-size: 70px;
+   font-family: var(--font-heading);
+   font-size: 3rem;
    text-align: center;
+   font-weight: 700;
+   line-height: 1.3;
 }
 
+/* Modified: Hero Paragraph */
 .coverDiv .mainDiv .mainSec>p{
-   width: 80%;
-   font-size: 1.5rem;
+   width: 85%;
+   max-width: 700px;
+   font-size: 1.2rem;
    text-align: center;
-   padding-block: 10px;
-   font-weight: lighter;
-   color: white;
+   padding-block: 20px;
+   font-weight: 400;
+   color: var(--text-on-dark); /* Light text */
+   opacity: 0.9;
 }
 
+/* Modified: Hero Button */
 .coverDiv .mainDiv .mainSec>a{
    text-decoration: none;
-   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-   font-weight: bold;
-   position: relative;
-   z-index: 2;
-   color: white;
-   padding: 10px 50px 10px;
-   margin-top: 8px;
+   font-family: var(--font-heading);
+   font-weight: 600;
+   color: var(--text-on-light); /* Dark text on light button */
+   background-color: var(--accent-color-1); /* Orange accent background */
+   padding: 12px 35px;
+   margin-top: 15px;
    text-decoration: none;
-   color: white;
-   border: 2px solid white;
+   border: 2px solid var(--accent-color-1);
+   border-radius: 5px;
 }
 
-.coverDiv .mainDiv .mainSec>a::before{
-   content: " ";
-   width: 0%;
-   height: 100%;
-   position: absolute;
-   top: 0;
-   left: 50%;
-   background-color: white;
-   z-index: -1;
-   transition: 0.5s;
-}
-
-.coverDiv .mainDiv .mainSec>a::after{
-   content: " ";
-   width: 0%;
-   height: 100%;
-   position: absolute;
-   top: 0;
-   right: 50%;
-   background-color: white;
-   z-index: -1;
-   transition: 0.5s;
-}
-
+/* Modified: Hero Button Hover */
 .coverDiv .mainDiv .mainSec>a:hover{
-   color: black;
-}
-
-.coverDiv .mainDiv .mainSec>a:hover::before, .coverDiv .mainDiv .mainSec>a:hover::after{
-   width: 50%;
+   background-color: transparent;
+   color: var(--accent-color-1); /* Orange text */
+   border-color: var(--accent-color-1);
+   transform: translateY(-2px);
 }
 /* Div one ends ========================== */
 
 
-/* Div Two starts ========================== */
-.divTwo{
+/* Added: General Section Padding */
+.divProblem,
+.divTwo,
+.divSeven#about,
+.divTeam,
+.divThree,
+.divFour,
+.divFive,
+.divSeven#contact {
    width: 100%;
    height: auto;
    display: flex;
    justify-content: center;
    align-items: center;
    flex-direction: column;
-   padding-block: 50px;
-   /* border: 1px solid red; */
+   padding: 80px 20px;
 }
 
-.divTwo>section{
-   width: 85%;
-   /* border: 1px solid red; */
+/* Modified: Alternating Background for Section Distinction */
+.divTwo, .divFour, .divTeam { /* White background */
+    background-color: var(--background-light);
+}
+.divProblem, .divSeven#about, .divFive { /* Light grey background */
+    background-color: #EDF2F4; /* Slightly different light grey */
 }
 
 
@@ -238,203 +302,212 @@ p{
    align-items: center;
    flex-direction: column;
    text-align: center;
+   width: 90%;
+   max-width: 800px;
+   margin-bottom: 40px;
 }
 
 .headingSec>h1{
    width: 100%;
    text-align: center;
-   font-size: var(--rem2);
-   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-   margin-bottom: 5px;
+   font-size: 2.2rem;
+   font-family: var(--font-heading);
+   font-weight: 700;
+   margin-bottom: 15px;
+   color: var(--text-on-light); /* Use dark text color */
 }
 
+/* Modified: Highlight color */
 .headingSec>h1 .highlight{
-   color: red;
-   /* background: linear-gradient(20deg, rgba(255, 0, 0, 1) , rgba(0, 0, 255, 1));
-   -webkit-background-clip: text;
-   color: transparent;
-   transition: 0.5s; */
+   color: var(--primary-color); /* Use primary color (Blue/Purple) */
 }
 
 .headingSec>p{
-   font-size: var(--rem1-1);
+   font-size: 1.1rem;
+   color: var(--text-grey); /* Use standard paragraph color */
+   line-height: 1.7;
 }
 /* General Heading Sec ================== */
 
 
-.divTwo .firstSec{
+/* Modified: First section layout */
+.firstSec{
+   width: 100%;
+   max-width: 1200px;
    height: auto;
    display: flex;
    justify-content: center;
-   align-items: center;
+   align-items: stretch;
    flex-wrap: wrap;
-   margin-top: 30px;
+   gap: 30px;
 }
 
+/* Div Two starts ========================== */
+.divTwo>section,
+.divProblem>section,
+.divSeven#about>section,
+.divTeam>section,
+.divThree>section,
+.divFour>section,
+.divFive>section,
+.divSeven#contact>section {
+   width: 90%;
+   max-width: 1200px;
+}
+
+/* Modified: Program Card styles */
 .divTwo .firstSec .courseSec{
-   width: 30%;
+   flex-basis: 30%;
+   min-width: 280px;
    height: auto;
    display: flex;
    flex-direction: column;
    align-items: center;
-   justify-content: center;
+   justify-content: flex-start;
    text-align: center;
-   background-color: rgba(0, 0, 0, 0.05);
-   padding: 20px;
-   padding-block: 30px;
-   border: 0.5px solid silver;
+   background-color: var(--background-light); /* White background for cards */
+   padding: 30px 25px;
+   border: 1px solid #e0e0e0; /* Slightly darker border */
    border-radius: 10px;
-   margin: 1.66%;
-   transition: 0.5s;
+   transition: all 0.3s ease;
+   box-shadow: 0 2px 5px rgba(0,0,0,0.05);
 }
 
+/* Modified: Card hover effect */
 .divTwo .firstSec .courseSec:hover{
-   box-shadow: 0px 5px 10px silver;
-   margin-top: -1%;
+   box-shadow: 0 8px 16px rgba(106, 90, 205, 0.15); /* Use primary color with opacity */
+   transform: translateY(-5px);
 }
 
+/* Modified: Program Card Heading */
 .divTwo .firstSec .courseSec>h3{
-   font-size: var(--rem1-3);
+   font-family: var(--font-heading);
+   font-size: 1.4rem;
+   font-weight: 600;
    position: relative;
-   padding-bottom: 8px;
+   padding-bottom: 12px;
+   margin-bottom: 20px;
+   color: var(--primary-color); /* Use primary color */
 }
+
+/* Modified: Heading underline with cycling accent colors */
+.divTwo .firstSec .courseSec:nth-child(1)>h3::after { background-color: var(--accent-color-1); } /* Orange */
+.divTwo .firstSec .courseSec:nth-child(2)>h3::after { background-color: var(--accent-color-2); } /* Green */
+.divTwo .firstSec .courseSec:nth-child(3)>h3::after { background-color: var(--accent-color-3); } /* Magenta/Purple */
+/* Add more if needed or cycle */
+.divTwo .firstSec .courseSec:nth-child(4)>h3::after { background-color: var(--accent-color-1); } /* Orange again */
 
 .divTwo .firstSec .courseSec>h3::after{
    content: " ";
-   width: 50%;
-   height: 5%;
+   width: 60px;
+   height: 3px;
    position: absolute;
-   bottom: 0%;
-   left: 20%;
-   background-color: red;
+   bottom: 0;
+   left: 50%;
+   transform: translateX(-50%);
+   /* Background color applied individually above */
 }
 
-.divTwo .firstSec .courseSec>p{
-   width: 95%;
-   margin-top: 20px;
+.divTwo .firstSec .courseSec>p,
+.divTwo .firstSec .courseSec ul {
+   width: 100%;
+   margin-top: 0;
    text-align: center;
-   font-size: var(--rem1-05);
+   font-size: 1rem;
+   color: var(--text-grey);
+}
+.divTwo .firstSec .courseSec ul {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 15px;
+}
+.divTwo .firstSec .courseSec ul li {
+    margin-bottom: 8px;
 }
 /* Div Two ends ========================== */
 
 
-
 /* Div Three starts ========================== */
-.divThree{
-   width: 100%;
-   height: auto;
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   flex-direction: column;
-   padding-block: 50px;
-}
-
-.divThree>section{
-   width: 85%;
-}
-
-.divThree .firstSec{
-   height: auto;
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   flex-wrap: wrap;
-   margin-top: 30px;
-}
-
+/* Modified: Campus Image Section */
 .divThree .firstSec .imgSec{
-   width: 30%;
-   height: 450px;
-   margin: 1.66%;
+   flex-basis: 30%;
+   min-width: 280px;
+   height: 350px;
    border-radius: 10px;
    position: relative;
    overflow: hidden;
-   transition: 0.5s;
-   
+   transition: all 0.3s ease;
+   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.divThree .firstSec .imgSec:hover {
+    transform: scale(1.03);
 }
 
 .divThree .firstSec .imgSec>img{
    position: absolute;
-   width: 200%;
-   min-height: 100%;
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
    top: 0;
-   left: -50%;
-   transition: 0.5s;
+   left: 0;
+   transition: transform 0.5s ease;
 }
 
+/* Modified: Image overlay */
 .divThree .firstSec .imgSec::after{
    content: var(--university);
    width: 100%;
    height: 100%;
    position: absolute;
-   top: 100%;
-   left: 0%;
-   background-color: rgba(0, 0, 0, 0.3);
-   transition: 0.8s;
+   top: 0;
+   left: 0;
+   background-color: rgba(38, 38, 38, 0.6); /* Use dark overlay */
+   transition: opacity 0.5s ease;
    opacity: 0;
-   color: white;
+   color: var(--text-on-dark); /* Light text */
    display: flex;
    justify-content: center;
    align-items: center;
+   font-family: var(--font-heading);
    font-size: 1.5rem;
+   font-weight: 600;
+   text-align: center;
+   padding: 10px;
 }
 
 .divThree .firstSec .imgSec:hover::after{
    opacity: 1;
-   top: 0%;
 }
-
-
 /* Div Three ends ========================== */
 
 
 /* Div Four starts ========================== */
-.divFour{
-   width: 100%;
-   height: auto;
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   flex-direction: column;
-   padding-block: 50px;
-}
-
-.divFour>section{
-   width: 85%;
-}
-
-.divFour .firstSec{
-   height: auto;
-   display: flex;
-   justify-content: center;
-   align-items: flex-start;
-   flex-wrap: wrap;
-   margin-top: 30px;
-}
-
+/* Modified: Facilities Section */
 .divFour .firstSec .subSec{
-   width: 30%;
+   flex-basis: 30%;
+   min-width: 280px;
    height: auto;
    display: flex;
    flex-direction: column;
-   justify-content: center;
+   justify-content: flex-start;
    align-items: center;
-   margin: 1.66%;
+   text-align: center;
 }
 
 .divFour .firstSec .subSec .imgSec{
    width: 100%;
-   height: 300px;
+   height: 250px;
    border-radius: 10px;
    position: relative;
    overflow: hidden;
+   margin-bottom: 20px;
+   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
 .divFour .firstSec .subSec .imgSec>img{
    position: absolute;
    width: 100%;
-   min-height: 100%;
+   height: 100%;
    top: 0;
    left: 0%;
    object-fit: cover;
@@ -442,255 +515,286 @@ p{
 
 .divFour .firstSec .subSec>h3{
    width: 100%;
-   text-align: left;
-   padding-top: 15px;
+   text-align: center;
+   padding-top: 0;
    padding-bottom: 8px;
-   font-size: var(--rem1-3);
+   font-size: 1.3rem;
+   font-family: var(--font-heading);
+   font-weight: 600;
+   color: var(--primary-color); /* Use primary color */
 }
 
 .divFour .firstSec .subSec>p{
-   font-size: var(--rem1-05);
+   font-size: 1rem;
    padding-bottom: 20px;
+   color: var(--text-grey);
 }
 /* Div Four ends ========================== */
 
 
+/* Added: Styles for Team Section */
+.divTeam .firstSec .teamMember {
+    flex-basis: 30%;
+    min-width: 250px;
+    background-color: var(--background-light); /* White background */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+    text-align: center;
+}
+.divTeam .firstSec .teamMember:hover {
+    box-shadow: 0 8px 16px rgba(106, 90, 205, 0.15); /* Primary color shadow */
+    transform: translateY(-5px);
+}
+.divTeam .firstSec .teamMember img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+    border: 3px solid #e0e0e0; /* Light border */
+}
+.divTeam .firstSec .teamMember h3 {
+    font-family: var(--font-heading);
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--text-on-light); /* Dark text */
+    margin-bottom: 8px;
+}
+.divTeam .firstSec .teamMember p {
+    font-size: 0.95rem;
+    color: var(--text-grey);
+    line-height: 1.5;
+}
+
+
 /* Div Five starts ========================== */
-.divFive{
-   width: 100%;
-   height: auto;
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   flex-direction: column;
-   padding-block: 50px;
-}
-
-.divFive>section{
-   width: 85%;
-}
-
+/* Modified: Testimonial section */
 .divFive .firstSec{
-   height: auto;
-   display: flex;
-   justify-content: center;
-   align-items: flex-start;
-   margin-top: 30px;
-   
-   flex-wrap: nowrap;
-   overflow-x: auto;
-   overflow-y: hidden;
-   cursor: grab;
-
-   scroll-snap-type: inline mandatory;
-}
-
-.divFive .firstSec > *{
-   scroll-snap-align: center; /*or start */
-}
-
-.divFive .firstSec .subSec:first-child{
-   margin-left: 85%;
-}
-
-
-.divFive .firstSec::-webkit-scrollbar{
-   display: none;
+   cursor: default;
 }
 
 .divFive .firstSec .subSec{
-   width: 43%;
+   flex-basis: 45%;
+   min-width: 300px;
    height: auto;
    display: flex;
-   justify-content: center;
+   justify-content: flex-start;
    align-items: flex-start;
-   margin: 1.5%;
-   padding: 15px 20px 15px;
+   padding: 25px;
    border-radius: 10px;
-   background-color: rgba(255, 0, 0, 0.05);
-   flex-shrink: 0;
+   background-color: var(--background-light); /* White background */
+   border: 1px solid #e0e0e0;
+   box-shadow: 0 2px 5px rgba(0,0,0,0.05);
 }
 
 .divFive .firstSec .subSec .imgSec{
-   width: 50px;
-   height: 50px;
-   margin-right: 15px;
+   width: 60px;
+   height: 60px;
+   margin-right: 20px;
    border-radius: 50%;
    overflow: hidden;
    position: relative;
+   flex-shrink: 0;
 }
 
 .divFive .firstSec .subSec .imgSec>img{
    position: absolute;
    top: 0%;
    width: 100%;
-   height: fit-content;
+   height: 100%;
+   object-fit: cover;
 }
 
 .divFive .firstSec .subSec .quoteSec{
-   width: 80%;
+   width: auto;
    height: auto;
    display: flex;
    flex-direction: column;
+   flex-grow: 1;
 }
 
+/* Modified: Quote style */
 .divFive .firstSec .subSec .quoteSec>p{
    font-style: italic;
-   font-weight: 350;
+   font-weight: 400;
+   color: #444;
+   line-height: 1.7;
+   margin-bottom: 15px;
+   position: relative;
+   padding-left: 25px; /* More space */
+}
+/* Modified: Quote mark */
+.divFive .firstSec .subSec .quoteSec>p::before {
+    content: '“';
+    position: absolute;
+    left: 0;
+    top: -5px;
+    font-size: 3rem; /* Larger quote mark */
+    color: var(--primary-color); /* Primary color */
+    opacity: 0.2; /* More subtle */
+    font-family: serif;
 }
 
 .divFive .firstSec .subSec .quoteSec .name{
-   font-weight: bold;
+   font-weight: 600;
    margin-top: 8px;
+   font-family: var(--font-heading);
+   color: var(--text-on-light); /* Dark text */
 }
 
+/* Modified: Rating stars color (using one accent) */
 .divFive .firstSec .subSec .quoteSec .rating{
-   font-size: x-small;
+   font-size: small;
    margin-top: 5px;
+   color: var(--accent-color-1); /* Orange for stars */
 }
-
+.divFive .firstSec .subSec .quoteSec .rating .fa-star-half-stroke {
+    color: var(--accent-color-1);
+}
+.divFive .firstSec .subSec .quoteSec .rating .fa-regular {
+    color: #ccc;
+}
 /* Div Five ends ========================== */
 
 
 /* Div Six starts ========================== */
+/* Modified: CTA Section */
 .divSix{
    width: 100%;
-   min-height: 400px;
-   background: url(../img/overlay.jpg) fixed no-repeat;
-   background-size: cover;
-}
-
-.divSix .overlay{
-   width: 100%;
-   min-height: inherit;
+   min-height: 350px;
+   /* Using primary color background */
+   background-color: var(--primary-color); /* Blue/Purple background */
    display: flex;
    justify-content: center;
    align-items: center;
-   flex-direction: column;
-   padding-block: 50px;
-   background: linear-gradient(20deg, rgba(255, 0, 0, 0.6) , rgba(0, 0, 255, 0.6));
+   padding: 60px 20px;
 }
 
-.divSix .overlay .mainSec{
+.divSix .mainSec{
    display: flex;
    justify-content: center;
    align-items: center;
    flex-direction: column;
    position: relative;
-}
-
-.divSix .overlay .mainSec>h1{
-   font-size: var(--rem2);
-   color: white;
    text-align: center;
-   line-height: 4rem;
-   text-transform: uppercase;
-   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-.divSix .overlay .mainSec>a{
-   color: white;
-   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-   padding: 15px 50px 15px;
-   font-weight: bold;
+.divSix .mainSec>h1{
+   font-size: 2.2rem;
+   color: var(--text-on-dark); /* Light text on dark background */
+   text-align: center;
+   line-height: 1.4;
+   text-transform: none;
+   font-family: var(--font-heading);
+   font-weight: 700;
+   max-width: 700px;
+   margin-bottom: 30px;
+}
+
+/* Modified: CTA Button */
+.divSix .mainSec>a{
+   color: var(--text-on-light); /* Dark text */
+   font-family: var(--font-heading);
+   padding: 12px 35px;
+   font-weight: 600;
    text-decoration: none;
    text-transform: uppercase;
    margin-top: 10px;
    position: relative;
-   background-color: transparent;
+   background-color: var(--accent-color-2); /* Green accent background */
+   border: 2px solid var(--accent-color-2);
+   border-radius: 5px;
    z-index: 1;
-   overflow: visible;
 }
 
-.divSix .overlay .mainSec>a::before{
-   content: " ";
-   position: absolute;
-   top: 0%;
-   left: 0%;
-   width: calc(100% - 2px);
-   height: calc(100% - 2px);
-   z-index: -1;
-   border-top: 2px solid white;
-   border-left: 2px solid white;
-   transition: 0.5s;
+/* Modified: CTA Button Hover */
+.divSix .mainSec>a:hover{
+   background-color: transparent;
+   color: var(--accent-color-2); /* Green text */
+   border-color: var(--accent-color-2);
+   transform: translateY(-2px);
 }
-
-.divSix .overlay .mainSec>a::after{
-   content: " ";
-   position: absolute;
-   top: 0%;
-   right: 0%;
-   width: calc(100% - 2px);
-   height: calc(100% - 2px);
-   z-index: -1;
-   border-right: 2px solid white;
-   border-bottom: 2px solid white;
-   transition: 0.5s;
-}
-
-.divSix .overlay .mainSec>a:hover::before{
-   margin-top: -5px;
-   margin-left: -5px;
-}
-
-.divSix .overlay .mainSec>a:hover::after{
-   margin-right: -5px;
-   margin-bottom: -5px;
-}
-
 /* Div Six ends ========================== */
 
 
 /* Div Seven starts ========================== */
-.divSeven{
-   width: 100%;
-   height: auto;
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   flex-direction: column;
-   padding-block: 50px;
+/* Modified: Footer section */
+.divSeven#contact {
+    background-color: var(--background-dark); /* Use dark background */
+    color: var(--text-on-dark); /* Light text */
+    padding-bottom: 30px;
 }
 
-.divSeven>section{
-   width: 85%;
+.divSeven#contact .headingSec {
+    margin-bottom: 20px;
 }
 
-.divSeven .firstSec{
+.divSeven#contact .headingSec h2 {
+    font-size: 1.8rem;
+    color: var(--text-on-dark);
+    font-family: var(--font-heading);
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+.divSeven#contact .headingSec p {
+    color: rgba(240, 240, 240, 0.8); /* Use text-on-dark with opacity */
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 5px;
+}
+
+.divSeven#contact .firstSec{
    height: auto;
    display: flex;
    justify-content: center;
    align-items: center;
    flex-wrap: wrap;
-   margin-top: 30px;
+   margin-top: 20px;
    overflow-y: hidden;
 }
 
-.divSeven .firstSec>a{
-   width: 40px;
-   height: 40px;
-   background-color: rgba(0, 0, 0, 0.05);
+/* Modified: Social Media Icons */
+.divSeven#contact .firstSec>a{
+   width: 45px;
+   height: 45px;
+   background-color: rgba(240, 240, 240, 0.1); /* Transparent light background */
    border-radius: 50%;
    display: flex;
    justify-content: center;
    align-items: center;
-   margin-inline: 10px;
-   color: gray;
+   margin: 0 10px;
+   color: var(--text-on-dark); /* Light icon */
+   font-size: 1.2rem;
    text-decoration: none;
-   transition: 0.5s;
+   transition: all 0.3s ease;
 }
 
-.divSeven .firstSec>a:hover{
-   transform: rotate(360deg);
-   background-color: rgba(0, 0, 0, 0.1);
-   color: gray;
+/* Modified: Social Icon Hover - Cycle through accent colors */
+.divSeven#contact .firstSec>a:nth-child(1):hover { background-color: var(--accent-color-1); color: var(--text-on-light); } /* Orange */
+.divSeven#contact .firstSec>a:nth-child(2):hover { background-color: var(--accent-color-2); color: var(--text-on-light); } /* Green */
+.divSeven#contact .firstSec>a:nth-child(3):hover { background-color: var(--accent-color-3); color: var(--text-on-light); } /* Magenta/Purple */
+.divSeven#contact .firstSec>a:nth-child(4):hover { background-color: var(--primary-color); color: var(--text-on-dark); }    /* Blue/Purple */
+.divSeven#contact .firstSec>a:nth-child(5):hover { background-color: var(--accent-color-1); color: var(--text-on-light); } /* Orange again */
+
+.divSeven#contact .firstSec>a:hover{
+   transform: translateY(-3px) scale(1.1);
 }
 
-.divSeven .firstSec>p>i{
-   color: blue;
+
+/* Added: Copyright style */
+.divSeven#contact > p {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 0.9em;
+    color: rgba(240, 240, 240, 0.6); /* Dimmed light text */
 }
 
-.divSeven .firstSec>p>a{
-   color: blue;
+/* Added: Generic styles for sections added in HTML (if not covered) */
+.divProblem, .divTeam {
+    /* Inherits padding from general section rule */
 }
-/* Div Seven ends ========================== */
+.divTeam .headingSec {
+    margin-bottom: 40px;
+}
