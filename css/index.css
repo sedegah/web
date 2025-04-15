@@ -74,22 +74,22 @@ a, button {
    font-weight: inherit; /* Inherit weight from h1/p */
    /* Text shadow is inherited from parent h1/p in this case */
  }
- 
+
  .coverDiv .mainDiv .mainSec .hero-kw-green {
    color: var(--accent-color-2); /* Green */
    font-weight: inherit;
  }
- 
+
  .coverDiv .mainDiv .mainSec .hero-kw-blue {
    color: var(--primary-color); /* Blue/Purple */
    font-weight: inherit;
  }
- 
+
  .coverDiv .mainDiv .mainSec .hero-kw-magenta {
    color: var(--accent-color-3); /* Magenta/Purple */
    font-weight: inherit;
  }
- 
+
  /* Ensure keywords in h1 maintain boldness if needed */
  .coverDiv .mainDiv .mainSec h1 span[class*="hero-kw-"] {
      font-weight: 700; /* Or inherit if h1 style is sufficient */
@@ -100,12 +100,13 @@ a, button {
    font-weight: inherit; /* Inherit weight from h1 */
    /* Text shadow is inherited from parent h1 */
  }
- 
+
  /* REMOVED the rule below as spans are no longer in the paragraph */
  /*
  .coverDiv .mainDiv .mainSec p span[class*="hero-kw-"] {
      font-weight: 500;
  }
+ */
 
 /* Div one starts ========================== */
 .coverDiv{
@@ -231,7 +232,6 @@ a, button {
 }
 
 .coverDiv .mainHeader .hamburgerIcon>i{
-   
    font-size: x-large;
 }
 
@@ -346,6 +346,9 @@ a, button {
    width: 90%;
    max-width: 800px;
    margin-bottom: 40px;
+   /* ** NEW: Added auto margins for centering ** */
+   margin-left: auto;
+   margin-right: auto;
 }
 
 .headingSec>h1{
@@ -365,25 +368,25 @@ a, button {
    color: var(--accent-color-1); /* Orange */
    font-family: 'Atma', sans-serif; /* Added this line */
  }
- 
+
  /* Programs Section Highlight (Our Programs) */
  .divTwo .headingSec h1 .highlight {
    color: var(--accent-color-2); /* Green */
    font-family: 'Atma', sans-serif; /* Added this line */
  }
- 
+
  /* About Us Section Highlight (About) */
  .divSeven#about .headingSec h1 .highlight {
    color: var(--accent-color-3); /* Magenta/Purple */
    font-family: 'Atma', sans-serif; /* Added this line */
  }
- 
+
  /* Team Section Highlight (Team) */
  .divTeam .headingSec h1 .highlight {
    color: var(--color-yellow);    /* Yellow */
    font-family: 'Atma', sans-serif; /* Added this line */
  }
- 
+
  /* Testimonials Section Highlight (What) */
  .divFive .headingSec h1 .highlight {
    color: var(--primary-color);   /* Blue/Purple */
@@ -398,18 +401,23 @@ a, button {
 
 
 /* Modified: First section layout */
+/* This holds the cards/items within a section */
 .firstSec{
    width: 100%;
-   max-width: 1200px;
+   max-width: 1200px; /* Content area width */
+   /* ** NOTE: margin auto not needed here as parent section uses flex center ** */
+   /* margin-left: auto;  */
+   /* margin-right: auto; */
    height: auto;
    display: flex;
-   justify-content: center;
-   align-items: stretch;
-   flex-wrap: wrap;
-   gap: 30px;
+   justify-content: center; /* Center items horizontally */
+   align-items: stretch; /* Make items same height */
+   flex-wrap: wrap; /* Allow wrapping */
+   gap: 30px; /* Gap between items */
 }
 
 /* Div Two starts ========================== */
+/* Section container - already takes 100% width in section padding rule */
 .divTwo>section,
 .divProblem>section,
 .divSeven#about>section,
@@ -418,23 +426,24 @@ a, button {
 .divFour>section,
 .divFive>section,
 .divSeven#contact>section {
-   width: 90%;
-   max-width: 1200px;
+   /* This selector seems unused or redundant? .firstSec handles content width */
+   /* width: 90%; */
+   /* max-width: 1200px; */
 }
 
 /* Modified: Program Card styles */
 .divTwo .firstSec .courseSec{
-   flex-basis: 30%;
-   min-width: 280px;
+   flex-basis: 30%; /* Controls width in flex row */
+   min-width: 280px; /* Prevents getting too small */
    height: auto;
    display: flex;
    flex-direction: column;
    align-items: center;
    justify-content: flex-start;
    text-align: center;
-   background-color: var(--background-light); /* White background for cards */
+   background-color: var(--background-light);
    padding: 30px 25px;
-   border: 1px solid #e0e0e0; /* Slightly darker border */
+   border: 1px solid #e0e0e0;
    border-radius: 10px;
    transition: all 0.3s ease;
    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
@@ -457,23 +466,7 @@ a, button {
    color: var(--accent-color-2); /* Changed to Green accent */
 }
 
-/* Modified: Heading underline with cycling accent colors - REMOVED */
-/*
-.divTwo .firstSec .courseSec:nth-child(1)>h3::after { background-color: var(--accent-color-1); }
-.divTwo .firstSec .courseSec:nth-child(2)>h3::after { background-color: var(--accent-color-2); }
-.divTwo .firstSec .courseSec:nth-child(3)>h3::after { background-color: var(--accent-color-3); }
-.divTwo .firstSec .courseSec:nth-child(4)>h3::after { background-color: var(--accent-color-1); }
-
-.divTwo .firstSec .courseSec>h3::after{
-   content: " ";
-   width: 60px;
-   height: 3px;
-   position: absolute;
-   bottom: 0;
-   left: 50%;
-   transform: translateX(-50%);
-}
-*/
+/* Modified: Heading underline - REMOVED */
 
 .divTwo .firstSec .courseSec>p,
 .divTwo .firstSec .courseSec ul {
@@ -601,20 +594,24 @@ a, button {
 
 /* Added: Styles for Team Section */
 .divTeam .firstSec .teamMember {
-    flex-basis: 30%;
-    min-width: 250px;
-    background-color: var(--background-light); /* White background */
+    flex-basis: 30%; /* Controls width in flex row */
+    min-width: 250px; /* Prevents getting too small */
+    background-color: var(--background-light);
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.05);
     transition: all 0.3s ease;
     text-align: center;
+    display: flex; /* Ensure flex for internal alignment if needed */
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
 }
 .divTeam .firstSec .teamMember:hover {
     box-shadow: 0 8px 16px rgba(106, 90, 205, 0.15); /* Primary color shadow */
     transform: translateY(-5px);
 }
-.divTeam .firstSec .teamMember img {
+.divTeam .firstSec .teamMember img { /* Assuming img might be added later */
     width: 120px;
     height: 120px;
     border-radius: 50%;
@@ -639,19 +636,19 @@ a, button {
 /* Div Five starts ========================== */
 /* Modified: Testimonial section */
 .divFive .firstSec{
-   cursor: default;
+   cursor: default; /* Base cursor */
 }
 
 .divFive .firstSec .subSec{
-   flex-basis: 45%;
-   min-width: 300px;
+   flex-basis: 45%; /* Controls width */
+   min-width: 300px; /* Prevents getting too small */
    height: auto;
-   display: flex;
+   display: flex; /* Row layout */
    justify-content: flex-start;
    align-items: flex-start;
    padding: 25px;
    border-radius: 10px;
-   background-color: var(--background-light); /* White background */
+   background-color: var(--background-light);
    border: 1px solid #e0e0e0;
    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
 }
@@ -731,7 +728,6 @@ a, button {
 .divSix{
    width: 100%;
    min-height: 350px;
-   /* Using primary color background */
    background-color: var(--primary-color); /* Blue/Purple background */
    display: flex;
    justify-content: center;
@@ -794,8 +790,10 @@ a, button {
     padding-bottom: 30px;
 }
 
+/* Footer heading section - ensure centered */
 .divSeven#contact .headingSec {
     margin-bottom: 20px;
+    /* Already centered via general .headingSec rule */
 }
 
 .divSeven#contact .headingSec h2 {
@@ -812,27 +810,30 @@ a, button {
     margin-bottom: 5px;
 }
 
+/* Footer firstSec (social links) */
 .divSeven#contact .firstSec{
    height: auto;
    display: flex;
-   justify-content: center;
+   justify-content: center; /* Center icons */
    align-items: center;
    flex-wrap: wrap;
    margin-top: 20px;
    overflow-y: hidden;
+   /* Reset max-width from general rule if needed, though likely okay */
+   max-width: none;
 }
 
 /* Modified: Social Media Icons */
 .divSeven#contact .firstSec>a{
    width: 45px;
    height: 45px;
-   background-color: rgba(240, 240, 240, 0.1); /* Transparent light background */
+   background-color: rgba(240, 240, 240, 0.1);
    border-radius: 50%;
    display: flex;
    justify-content: center;
    align-items: center;
    margin: 0 10px;
-   color: var(--text-on-dark); /* Light icon */
+   color: var(--text-on-dark);
    font-size: 1.2rem;
    text-decoration: none;
    transition: all 0.3s ease;
@@ -859,9 +860,9 @@ a, button {
 }
 
 /* Added: Generic styles for sections added in HTML (if not covered) */
-.divProblem, .divTeam {
-    /* Inherits padding from general section rule */
-}
+/* Ensure Team section has consistent padding/background */
+/* .divTeam { } */
+
 .divTeam .headingSec {
-    margin-bottom: 40px;
+    /* Centered via general rule */
 }

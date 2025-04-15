@@ -1,231 +1,144 @@
 /* Responsive Styles */
 
 @media screen and (max-width: 1000px) {
-   /* Adjust flex-basis for slightly larger screens */
-   .divTwo .firstSec .courseSec,
-   .divThree .firstSec .imgSec,
-   .divFour .firstSec .subSec,
-   .divTeam .firstSec .teamMember, /* Added team member */
-   .divFive .firstSec .subSec {
-      flex-basis: 46%; /* Allow two columns */
-      min-width: 0; /* Reset min-width if needed */
-   }
-
-   /* Keep overlay visible if design requires */
-   /* .divThree .firstSec .imgSec::after{
-      top: 0%;
-      opacity: 1;
-   } */
-}
-
-
-@media screen and (max-width: 900px) {
-   /* Keep hamburger menu logic */
-   .coverDiv .mainHeader .navItems{
-      width: 0%; /* Hide initially */
-      height: auto; /* Allow content height */
-      position: absolute;
-      top: 80px; /* Position below header */
-      right: 0;
-      flex-direction: column;
-      background-color: rgba(38, 70, 83, 0.95); /* Darker background for menu */
-      backdrop-filter: blur(5px);
-      padding-block: 20px;
-      transition: width 0.5s ease; /* Animate width for slide-in */
-      overflow: hidden; /* Hide overflow during transition */
-      z-index: 100; /* Ensure menu is on top */
-      border-bottom-left-radius: 10px; /* Optional styling */
-   }
-    /* Style for when menu is shown via JS */
-    .coverDiv .mainHeader .navItems.active {
-        width: 250px; /* Adjust width as needed */
-        padding-inline: 20px; /* Add horizontal padding */
-    }
-    .coverDiv .mainHeader .navItems > span {
-        width: 100%; /* Make spans full width */
-        text-align: center; /* Center text */
-    }
-    .coverDiv .mainHeader .navItems > span > a {
-        display: block; /* Make links block level */
-        padding: 15px 0; /* Adjust padding */
-        width: 100%;
-    }
-     /* Reset hover underline for mobile menu */
-    .coverDiv .mainHeader .navItems > span > a::after {
-        display: none;
-    }
-    .coverDiv .mainHeader .navItems > span:hover > a::after {
-        width: 0; /* Ensure no underline on hover */
-    }
-     .coverDiv .mainHeader .navItems > span > a:hover {
-         color: var(--accent-color); /* Keep hover color */
-     }
-
-
-   .coverDiv .mainHeader .hamburgerIcon{
-      display: flex;
-   }
-}
-
-
-@media screen and (max-width: 768px) { /* Common tablet breakpoint */
-    /* Adjust hero text size */
-   .coverDiv .mainDiv .mainSec>h1{
-      font-size: 2.5rem;
-   }
-   .coverDiv .mainDiv .mainSec>p{
-      font-size: 1.1rem;
-      width: 90%;
-   }
-
-    /* Stack cards to single column */
-   .divTwo .firstSec .courseSec,
-   .divThree .firstSec .imgSec,
-   .divFour .firstSec .subSec,
-   .divTeam .firstSec .teamMember,
-   .divFive .firstSec .subSec {
-      flex-basis: 80%; /* Wider single column */
-      min-width: 0; /* Reset min-width */
-   }
-
-   .divFive .firstSec .subSec {
-      flex-basis: 90%; /* Testimonial slightly wider */
-   }
-
-   /* Adjust testimonial scroll margin if scroll snap was used */
-   /* .divFive .firstSec .subSec:first-child{ margin-left: ... } */
-
-   /* Adjust CTA heading */
-    .divSix .mainSec>h1 {
-        font-size: 1.8rem;
-    }
-}
-
-
-@media screen and (max-width: 600px){
-    /* Further reduce hero text size */
-   .coverDiv .mainDiv .mainSec>h1{
-      font-size: 2.2rem;
-   }
-
-    /* Adjust general section padding */
-    .divProblem, .divTwo, .divSeven#about, .divTeam, .divThree, .divFour, .divFive, .divSeven#contact {
-        padding: 60px 15px; /* Less vertical padding */
-    }
-
-    /* Adjust general heading size */
-    .headingSec>h1 {
-        font-size: 1.9rem;
-    }
-    .headingSec>p {
-        font-size: 1rem;
-    }
-}
-
-
-@media screen and (max-width: 500px){
-   /* Adjust root font sizes slightly if needed */
-   /* :root{ ... } */
-
-   .coverDiv .mainHeader{
-      padding-inline: 20px; /* Less padding */
-   }
-
-   .coverDiv .mainDiv .mainSec>h1{
-      font-size: 1.9rem;
-   }
-   .coverDiv .mainDiv .mainSec>p{
-      font-size: 1rem;
-      width: 95%;
-   }
-
-   /* Ensure single column cards take more width */
-   .divTwo .firstSec .courseSec,
-   .divThree .firstSec .imgSec,
-   .divFour .firstSec .subSec,
-   .divTeam .firstSec .teamMember,
-   .divFive .firstSec .subSec {
-      flex-basis: 95%; /* Almost full width */
-   }
-
-   /* Add margin between stacked cards */
-   .divTwo .firstSec .courseSec,
-   .divThree .firstSec .imgSec,
-   .divFour .firstSec .subSec,
-   .divTeam .firstSec .teamMember,
-   .divFive .firstSec .subSec {
-      margin-bottom: 25px; /* Add bottom margin when stacked */
-   }
-    .firstSec {
-        gap: 0; /* Remove gap if using margin */
-    }
-
-    .headingSec h1 {
-        font-size: 1.7rem;
-    }
-}
-
-
-@media screen and (max-width: 400px){
-   .coverDiv .mainHeader .logoSec img.logo {
-        width: 60px; /* Smaller logo */
-    }
-
-   .coverDiv .mainHeader .logoSec>span{
-      font-size: medium;
-   }
-   .coverDiv .mainHeader .hamburgerIcon>i{
-      font-size: large;
-   }
-
-   .coverDiv .mainDiv .mainSec>h1{
-      font-size: 1.7rem;
-   }
-   .coverDiv .mainDiv .mainSec>a {
-        padding: 10px 25px; /* Smaller button */
-   }
-
-   /* Adjust section width if needed */
-   .divTwo>section, .divThree>section, .divFour>section, .divFive>section, .divSeven>section {
-      width: 95%;
-   }
-
-   /* Testimonial layout adjustments */
-   .divFive .firstSec .subSec{
-      flex-direction: column; /* Stack image and text */
-      align-items: center; /* Center items */
-      text-align: center;
-   }
-   .divFive .firstSec .subSec .imgSec{
-      margin-right: 0;
-      margin-bottom: 15px; /* Space below image */
-   }
-   .divFive .firstSec .subSec .quoteSec{
-      width: 100%;
-      align-items: center;
-   }
-   .divFive .firstSec .subSec .quoteSec>p{
-      font-size: 0.95rem;
-      padding-left: 0; /* Remove padding */
-      text-align: center;
-   }
-   .divFive .firstSec .subSec .quoteSec>p::before {
-       display: none; /* Hide quote mark on small screens */
-   }
-   .divFive .firstSec .subSec .imgSec{
-      width: 50px;
-      height: 50px;
-   }
-
-    /* Footer social icons */
-    .divSeven#contact .firstSec>a {
-        width: 40px;
-        height: 40px;
-        font-size: 1rem;
-        margin: 0 5px; /* Less margin */
-    }
-}
-
-
-/* Reduced height adjustments, may not be needed */
-/* @media screen and (max-height:400px){ ... } */
+    /* Adjust flex-basis for slightly larger screens */
+    /* .divTwo .firstSec .courseSec, .divTeam .teamMember, .divFive .subSec rules handled below */
+    .divThree .firstSec .imgSec,
+    .divFour .firstSec .subSec { flex-basis: 46%; min-width: 0; }
+     /* Desktop basis for slideshow items */
+     .divTwo .firstSec .courseSec { flex-basis: 46%; min-width: 0; }
+     .divTeam .firstSec .teamMember { flex-basis: 46%; min-width: 0; }
+     .divFive .firstSec .subSec { flex-basis: 46%; min-width: 0; }
+ }
+ 
+ @media screen and (max-width: 900px) {
+    /* ... (Hamburger Menu styles remain the same) ... */
+    .coverDiv .mainHeader .navItems{ width: 0%; height: auto; position: absolute; top: 80px; right: 0; flex-direction: column; background-color: rgba(38, 70, 83, 0.95); backdrop-filter: blur(5px); padding-block: 20px; transition: width 0.5s ease; overflow: hidden; z-index: 100; border-bottom-left-radius: 10px; }
+     .coverDiv .mainHeader .navItems.active { width: 250px; padding-inline: 20px; }
+     .coverDiv .mainHeader .navItems > span { width: 100%; text-align: center; }
+     .coverDiv .mainHeader .navItems > span > a { display: block; padding: 15px 0; width: 100%; }
+     .coverDiv .mainHeader .navItems > span > a::after { display: none; }
+     .coverDiv .mainHeader .navItems > span:hover > a::after { width: 0; }
+     .coverDiv .mainHeader .navItems > span > a:hover { color: var(--accent-color); }
+     .coverDiv .mainHeader .hamburgerIcon{ display: flex; }
+ }
+ 
+ @media screen and (max-width: 768px) { /* Mobile Breakpoint */
+     /* ... (Hero text size adjustments remain) ... */
+    .coverDiv .mainDiv .mainSec>h1{ font-size: 2.5rem; }
+    .coverDiv .mainDiv .mainSec>p{ font-size: 1.1rem; width: 90%; }
+ 
+     /* --- START: Outer Slideshow Styles --- */
+     .mobile-slideshow-container { position: relative; overflow: hidden; width: 100%; }
+     .mobile-slideshow-container > div:not(.mobile-slideshow-nav) { display: none !important; width: 100%; animation: fadeIn 0.5s ease-in-out; }
+     .mobile-slideshow-container > div.slide-active { display: block !important; }
+     .mobile-slideshow-nav { display: flex; justify-content: space-between; position: absolute; bottom: 10px; left: 50%; transform: translateX(-50%); width: 80px; z-index: 5; }
+     .mobile-slideshow-nav button { background-color: rgba(0, 0, 0, 0.5); color: white; border: none; padding: 8px 12px; cursor: pointer; border-radius: 50%; font-size: 1rem; line-height: 1; }
+     .mobile-slideshow-nav button:hover { background-color: rgba(0, 0, 0, 0.8); }
+     /* --- END: Outer Slideshow Styles --- */
+ 
+     /* --- Centering Content WITHIN Outer Slides (Unchanged) --- */
+     .mobile-slideshow-container .headingSec { margin-left: auto; margin-right: auto; }
+     .mobile-slideshow-container > div:not(.divTwo) .firstSec { justify-content: center; align-items: stretch; }
+     .mobile-slideshow-container > div:not(.divTwo) .firstSec > section { margin-left: auto; margin-right: auto; }
+     /* --- End Centering Content --- */
+ 
+     /* --- START: Inner (Program) Automatic Slideshow Styles --- */
+     .mobile-slideshow-container .divTwo .firstSec { position: relative; padding-bottom: 0; padding-top: 0; width: 100%; max-width: 95%; margin: 20px auto 0 auto; display: block; }
+     .program-slideshow-container { position: relative; overflow: hidden; width: 100%; height: auto; transition: height 0.3s ease-in-out; border-radius: 10px; background-color: var(--background-light); border: 1px solid #e0e0e0; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+     .program-slideshow-container > .courseSec { display: flex !important; position: absolute; top: 0; left: 0; width: 100%; height: auto; opacity: 0; transform: translateX(100%); transition: transform 0.6s ease-in-out, opacity 0.6s ease-in-out; z-index: 1; box-sizing: border-box; padding: 25px; border-radius: 0; margin-bottom: 0; min-height: auto; text-align: center; flex-basis: auto; min-width: auto; flex-direction: column; align-items: center; justify-content: flex-start; }
+     .program-slideshow-container > .courseSec h3{ color: var(--accent-color-2); font-family: var(--font-heading); font-size: 1.4rem; margin-bottom: 15px; }
+     .program-slideshow-container > .courseSec p { color: var(--text-grey); font-size: 1rem; line-height: 1.6; }
+     .program-slideshow-container > .courseSec.program-slide-active { transform: translateX(0); opacity: 1; z-index: 2; }
+     .program-slideshow-container > .courseSec.program-slide-exiting { transform: translateX(-100%); opacity: 0; z-index: 1; }
+     /* --- END: Inner (Program) Automatic Slideshow Styles --- */
+ 
+ 
+     /* --- START: Team Slideshow Styles (NEW) --- */
+     /* Adjust parent .firstSec */
+     .divTeam .firstSec { display: block; position: relative; padding: 0; width: 100%; max-width: 95%; margin: 20px auto 0 auto; gap: 0; }
+     /* Container */
+     .team-slideshow-container { position: relative; overflow: hidden; width: 100%; height: auto; transition: height 0.3s ease-in-out; border-radius: 10px; background-color: var(--background-light); border: 1px solid #e0e0e0; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+     /* Slides */
+     .team-slideshow-container > .teamMember { display: flex !important; position: absolute; top: 0; left: 0; width: 100%; height: auto; opacity: 0; transform: translateX(100%); transition: transform 0.6s ease-in-out, opacity 0.6s ease-in-out; z-index: 1; box-sizing: border-box; padding: 25px; text-align: center; flex-direction: column; align-items: center; justify-content: flex-start; flex-basis: auto; min-width: auto; }
+     .team-slideshow-container > .teamMember h3 { margin-bottom: 8px; font-size: 1.3rem; }
+     .team-slideshow-container > .teamMember p { font-size: 0.95rem; color: var(--text-grey); }
+     /* Active/Exiting States */
+     .team-slideshow-container > .teamMember.team-slide-active { transform: translateX(0); opacity: 1; z-index: 2; }
+     .team-slideshow-container > .teamMember.team-slide-exiting { transform: translateX(-100%); opacity: 0; z-index: 1; }
+     /* --- END: Team Slideshow Styles --- */
+ 
+ 
+     /* --- START: Testimonial Slideshow Styles (NEW) --- */
+      /* Adjust parent .firstSec */
+     .divFive .firstSec { display: block; position: relative; padding: 0; width: 100%; max-width: 95%; margin: 0 auto; gap: 0; } /* No top margin needed? */
+     /* Container */
+     .testimonial-slideshow-container { position: relative; overflow: hidden; width: 100%; height: auto; transition: height 0.3s ease-in-out; border-radius: 10px; background-color: var(--background-light); border: 1px solid #e0e0e0; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+     /* Slides */
+     .testimonial-slideshow-container > .subSec { display: flex !important; position: absolute; top: 0; left: 0; width: 100%; height: auto; opacity: 0; transform: translateX(100%); transition: transform 0.6s ease-in-out, opacity 0.6s ease-in-out; z-index: 1; box-sizing: border-box; padding: 25px; align-items: flex-start; flex-basis: auto; min-width: auto; }
+     .testimonial-slideshow-container > .subSec .imgSec { width: 60px; height: 60px; margin-right: 20px; border-radius: 50%; overflow: hidden; position: relative; flex-shrink: 0; }
+     .testimonial-slideshow-container > .subSec .imgSec > img { position: absolute; top: 0; width: 100%; height: 100%; object-fit: cover; }
+     .testimonial-slideshow-container > .subSec .quoteSec { display: flex; flex-direction: column; flex-grow: 1; }
+     .testimonial-slideshow-container > .subSec .quoteSec > p { font-style: italic; color: #444; line-height: 1.7; margin-bottom: 15px; position: relative; padding-left: 25px; }
+     .testimonial-slideshow-container > .subSec .quoteSec > p::before { content: '“'; position: absolute; left: 0; top: -5px; font-size: 3rem; color: var(--primary-color); opacity: 0.2; font-family: serif; }
+     .testimonial-slideshow-container > .subSec .quoteSec .name { font-weight: 600; margin-top: 8px; font-family: var(--font-heading); color: var(--text-on-light); }
+     .testimonial-slideshow-container > .subSec .quoteSec .rating { font-size: small; margin-top: 5px; color: var(--accent-color-1); }
+     /* Active/Exiting States */
+     .testimonial-slideshow-container > .subSec.testimonial-slide-active { transform: translateX(0); opacity: 1; z-index: 2; }
+     .testimonial-slideshow-container > .subSec.testimonial-slide-exiting { transform: translateX(-100%); opacity: 0; z-index: 1; }
+     /* --- END: Testimonial Slideshow Styles --- */
+ 
+ 
+     /* --- Layout for non-slideshow cards --- */
+     .divThree .firstSec .imgSec, .divFour .firstSec .subSec { flex-basis: 80%; min-width: 0; margin-bottom: 25px; }
+     .divThree .firstSec, .divFour .firstSec { gap: 0; }
+     /* Team and Five handled above */
+     .divSix .mainSec>h1 { font-size: 1.8rem; }
+     /* --- End layout for non-slideshow cards --- */
+ 
+     @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+ }
+ 
+ /* Styles for screens LARGER than 768px */
+ @media screen and (min-width: 769px) {
+     /* Hide outer slideshow nav */
+     .mobile-slideshow-nav { display: none; }
+     /* REMOVED Hide inner slideshow nav */
+ 
+     /* Ensure outer slides are visible */
+     .mobile-slideshow-container { display: contents; }
+     .mobile-slideshow-container > div:not(.mobile-slideshow-nav) { display: block !important; animation: none; }
+ 
+     /* Restore divTwo layout */
+     .divTwo .firstSec { display: flex; justify-content: center; flex-wrap: wrap; gap: 30px; position: static; padding-bottom: 0; padding-top: 0; max-width: 1200px; margin: 0 auto; }
+      .program-slideshow-container { display: contents; height: auto !important; min-height: auto !important; }
+     .divTwo .firstSec .courseSec { display: flex !important; position: static; opacity: 1; z-index: auto; height: auto; max-height: none; overflow-y: visible; transform: none; transition: all 0.3s ease; flex-direction: column; align-items: center; justify-content: flex-start; text-align: center; flex-basis: 30%; min-width: 280px; padding: 30px 25px; border: 1px solid #e0e0e0; border-radius: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); min-height: auto; background-color: var(--background-light); animation: none; }
+     .divTwo .firstSec .courseSec.program-slide-active, .divTwo .firstSec .courseSec.program-slide-exiting { transform: none; opacity: 1; z-index: auto; }
+     .divTwo .firstSec .courseSec:hover{ box-shadow: 0 8px 16px rgba(106, 90, 205, 0.15); transform: translateY(-5px); }
+ 
+     /* Restore divTeam layout */
+     .divTeam .firstSec { display: flex; justify-content: space-around; flex-wrap: wrap; gap: 20px; position: static; padding: 0; max-width: 1200px; margin: 0 auto; }
+     .team-slideshow-container { display: contents; height: auto !important; min-height: auto !important; }
+     .divTeam .firstSec .teamMember { display: flex !important; position: static; opacity: 1; z-index: auto; height: auto; transform: none; transition: all 0.3s ease; flex-direction: column; align-items: center; justify-content: flex-start; text-align: center; flex-basis: 30%; min-width: 200px; /* Original min-width? Check index.css */ padding: 30px; border: 1px solid #e0e0e0; border-radius: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); background-color: var(--background-light); animation: none; }
+     .divTeam .firstSec .teamMember.team-slide-active, .divTeam .firstSec .teamMember.team-slide-exiting { transform: none; opacity: 1; z-index: auto; }
+     .divTeam .firstSec .teamMember:hover { box-shadow: 0 8px 16px rgba(106, 90, 205, 0.15); transform: translateY(-5px); }
+ 
+      /* Restore divFive layout */
+     .divFive .firstSec { display: flex; justify-content: center; flex-wrap: wrap; gap: 30px; position: static; padding: 0; max-width: 1200px; margin: 0 auto; }
+     .testimonial-slideshow-container { display: contents; height: auto !important; min-height: auto !important; }
+     .divFive .firstSec .subSec { display: flex !important; position: static; opacity: 1; z-index: auto; height: auto; transform: none; transition: all 0.3s ease; flex-direction: row; /* Original direction */ align-items: flex-start; text-align: left; flex-basis: 45%; min-width: 300px; padding: 25px; border: 1px solid #e0e0e0; border-radius: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); background-color: var(--background-light); animation: none; }
+     .divFive .firstSec .subSec.testimonial-slide-active, .divFive .firstSec .subSec.testimonial-slide-exiting { transform: none; opacity: 1; z-index: auto; }
+      /* No hover effect defined for testimonials originally */
+ 
+ }
+ 
+ /* ... (Remaining media queries @600px, @500px, @400px) ... */
+ /* Add height adjustments for new slideshows if needed */
+ @media screen and (max-width: 600px){
+     /* ... */
+      /* .program-slideshow-container { min-height: 320px; } */
+      /* .team-slideshow-container { min-height: 280px; } */
+      /* .testimonial-slideshow-container { min-height: 250px; } */
+     /* ... */
+ }
+ /* ... etc ... */
