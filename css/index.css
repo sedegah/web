@@ -94,7 +94,7 @@ a, button {
  .coverDiv .mainDiv .mainSec h1 span[class*="hero-kw-"] {
      font-weight: 700; /* Or inherit if h1 style is sufficient */
  }
- /* Added: Style for "Next Generation" keyword */
+/* Added: Style for "Next Generation" keyword */
 .coverDiv .mainDiv .mainSec .hero-kw-nextgen {
    color: var(--color-yellow); /* Orange */
    font-weight: inherit; /* Inherit weight from h1 */
@@ -334,7 +334,6 @@ a, button {
     background-color: #EDF2F4; /* Slightly different light grey */
 }
 
-
 /* General Heading Sec ================== */
 .headingSec{
    height: auto;
@@ -396,7 +395,6 @@ a, button {
 }
 /* General Heading Sec ================== */
 
-
 /* Modified: First section layout */
 .firstSec{
    width: 100%;
@@ -420,6 +418,14 @@ a, button {
 .divSeven#contact>section {
    width: 90%;
    max-width: 1200px;
+}
+
+/* Modified: Carousel container styles */
+.divTwo .firstSec .carousel-container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap; /* Default for desktop */
+    gap: 30px; /* Match .firstSec gap for desktop */
 }
 
 /* Modified: Program Card styles */
@@ -491,8 +497,29 @@ a, button {
 .divTwo .firstSec .courseSec ul li {
     margin-bottom: 8px;
 }
-/* Div Two ends ========================== */
 
+/* Added: Carousel indicators */
+.divTwo .firstSec .carousel-indicators {
+    display: none; /* Hidden by default (shown on mobile) */
+    margin-top: 20px;
+    text-align: center;
+}
+
+.divTwo .firstSec .carousel-indicators .indicator {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-color: #ccc;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.divTwo .firstSec .carousel-indicators .indicator.active {
+    background-color: var(--accent-color-2); /* Green accent */
+}
+/* Div Two ends ========================== */
 
 /* Div Three starts ========================== */
 /* Modified: Campus Image Section */
@@ -547,7 +574,6 @@ a, button {
 }
 /* Div Three ends ========================== */
 
-
 /* Div Four starts ========================== */
 /* Modified: Facilities Section */
 .divFour .firstSec .subSec{
@@ -598,8 +624,14 @@ a, button {
 }
 /* Div Four ends ========================== */
 
-
 /* Added: Styles for Team Section */
+.divTeam .firstSec .carousel-container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap; /* Default for desktop */
+    gap: 30px; /* Match .firstSec gap for desktop */
+}
+
 .divTeam .firstSec .teamMember {
     flex-basis: 30%;
     min-width: 250px;
@@ -635,9 +667,36 @@ a, button {
     line-height: 1.5;
 }
 
+.divTeam .firstSec .carousel-indicators {
+    display: none; /* Hidden by default (shown on mobile) */
+    margin-top: 20px;
+    text-align: center;
+}
+
+.divTeam .firstSec .carousel-indicators .indicator {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-color: #ccc;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.divTeam .firstSec .carousel-indicators .indicator.active {
+    background-color: var(--color-yellow); /* Yellow accent */
+}
 
 /* Div Five starts ========================== */
 /* Modified: Testimonial section */
+.divFive .firstSec .carousel-container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap; /* Default for desktop */
+    gap: 30px; /* Match .firstSec gap for desktop */
+}
+
 .divFive .firstSec{
    cursor: default;
 }
@@ -723,8 +782,28 @@ a, button {
 .divFive .firstSec .subSec .quoteSec .rating .fa-regular {
     color: #ccc;
 }
-/* Div Five ends ========================== */
 
+.divFive .firstSec .carousel-indicators {
+    display: none; /* Hidden by default (shown on mobile) */
+    margin-top: 20px;
+    text-align: center;
+}
+
+.divFive .firstSec .carousel-indicators .indicator {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-color: #ccc;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.divFive .firstSec .carousel-indicators .indicator.active {
+    background-color: var(--primary-color); /* Blue/Purple accent */
+}
+/* Div Five ends ========================== */
 
 /* Div Six starts ========================== */
 /* Modified: CTA Section */
@@ -784,7 +863,6 @@ a, button {
    transform: translateY(-2px);
 }
 /* Div Six ends ========================== */
-
 
 /* Div Seven starts ========================== */
 /* Modified: Footer section */
@@ -849,7 +927,6 @@ a, button {
    transform: translateY(-3px) scale(1.1);
 }
 
-
 /* Added: Copyright style */
 .divSeven#contact > p {
     text-align: center;
@@ -862,6 +939,8 @@ a, button {
 .divProblem, .divTeam {
     /* Inherits padding from general section rule */
 }
-.divTeam .headingSec {
-    margin-bottom: 40px;
+.divTeam .headingSec,
+.divTwo .headingSec,
+.divFive .headingSec {
+    margin-bottom: 30px; /* Reduced margin to tighten spacing */
 }

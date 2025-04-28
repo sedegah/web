@@ -5,7 +5,7 @@
    .divTwo .firstSec .courseSec,
    .divThree .firstSec .imgSec,
    .divFour .firstSec .subSec,
-   .divTeam .firstSec .teamMember, /* Added team member */
+   .divTeam .firstSec .teamMember,
    .divFive .firstSec .subSec {
       flex-basis: 46%; /* Allow two columns */
       min-width: 0; /* Reset min-width if needed */
@@ -17,7 +17,6 @@
       opacity: 1;
    } */
 }
-
 
 @media screen and (max-width: 900px) {
    /* Keep hamburger menu logic */
@@ -61,12 +60,10 @@
          color: var(--accent-color); /* Keep hover color */
      }
 
-
    .coverDiv .mainHeader .hamburgerIcon{
       display: flex;
    }
 }
-
 
 @media screen and (max-width: 768px) { /* Common tablet breakpoint */
     /* Adjust hero text size */
@@ -78,29 +75,79 @@
       width: 90%;
    }
 
-    /* Stack cards to single column */
-   .divTwo .firstSec .courseSec,
-   .divThree .firstSec .imgSec,
-   .divFour .firstSec .subSec,
-   .divTeam .firstSec .teamMember,
-   .divFive .firstSec .subSec {
-      flex-basis: 80%; /* Wider single column */
-      min-width: 0; /* Reset min-width */
-   }
+    /* Convert Programs section to carousel */
+    .divTwo .firstSec .carousel-container {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+        scrollbar-width: none; /* Hide scrollbar Firefox */
+        -ms-overflow-style: none; /* Hide scrollbar IE/Edge */
+    }
+    .divTwo .firstSec .carousel-container::-webkit-scrollbar {
+        display: none; /* Hide scrollbar Chrome/Safari */
+    }
+    .divTwo .firstSec .courseSec {
+        flex-basis: 80%; /* Wider single column */
+        min-width: 80%; /* Each card takes most of viewport width */
+        scroll-snap-align: center;
+        margin: 0 10px; /* Small margin for spacing */
+    }
 
-   .divFive .firstSec .subSec {
-      flex-basis: 90%; /* Testimonial slightly wider */
-   }
+    /* Show carousel indicators for Programs */
+    .divTwo .firstSec .carousel-indicators {
+        display: block;
+    }
 
-   /* Adjust testimonial scroll margin if scroll snap was used */
-   /* .divFive .firstSec .subSec:first-child{ margin-left: ... } */
+    /* Convert Team section to carousel */
+    .divTeam .firstSec .carousel-container {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+    .divTeam .firstSec .carousel-container::-webkit-scrollbar {
+        display: none;
+    }
+    .divTeam .firstSec .teamMember {
+        flex-basis: 80%;
+        min-width: 80%;
+        scroll-snap-align: center;
+        margin: 0 10px;
+    }
+    .divTeam .firstSec .carousel-indicators {
+        display: block;
+    }
 
-   /* Adjust CTA heading */
+    /* Convert Testimonials section to carousel */
+    .divFive .firstSec .carousel-container {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+    .divFive .firstSec .carousel-container::-webkit-scrollbar {
+        display: none;
+    }
+    .divFive .firstSec .subSec {
+        flex-basis: 80%;
+        min-width: 80%;
+        scroll-snap-align: center;
+        margin: 0 10px;
+    }
+    .divFive .firstSec .carousel-indicators {
+        display: block;
+    }
+
+    /* Adjust CTA heading */
     .divSix .mainSec>h1 {
         font-size: 1.8rem;
     }
 }
-
 
 @media screen and (max-width: 600px){
     /* Further reduce hero text size */
@@ -121,7 +168,6 @@
         font-size: 1rem;
     }
 }
-
 
 @media screen and (max-width: 500px){
    /* Adjust root font sizes slightly if needed */
@@ -163,8 +209,24 @@
     .headingSec h1 {
         font-size: 1.7rem;
     }
-}
 
+    /* Adjust carousel card size */
+    .divTwo .firstSec .courseSec {
+        flex-basis: 90%;
+        min-width: 90%;
+        margin: 0 5px;
+    }
+    .divTeam .firstSec .teamMember {
+        flex-basis: 90%;
+        min-width: 90%;
+        margin: 0 5px;
+    }
+    .divFive .firstSec .subSec {
+        flex-basis: 90%;
+        min-width: 90%;
+        margin: 0 5px;
+    }
+}
 
 @media screen and (max-width: 400px){
    .coverDiv .mainHeader .logoSec img.logo {
@@ -224,8 +286,24 @@
         font-size: 1rem;
         margin: 0 5px; /* Less margin */
     }
-}
 
+    /* Adjust carousel card size */
+    .divTwo .firstSec .courseSec {
+        flex-basis: 95%;
+        min-width: 95%;
+        margin: 0 2.5%;
+    }
+    .divTeam .firstSec .teamMember {
+        flex-basis: 95%;
+        min-width: 95%;
+        margin: 0 2.5%;
+    }
+    .divFive .firstSec .subSec {
+        flex-basis: 95%;
+        min-width: 95%;
+        margin: 0 2.5%;
+    }
+}
 
 /* Reduced height adjustments, may not be needed */
 /* @media screen and (max-height:400px){ ... } */
