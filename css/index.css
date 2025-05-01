@@ -67,45 +67,33 @@ p{
 a, button {
   transition: all 0.3s ease;
 }
+
 /* Added: Styles for Hero Section Keyword Highlighting */
 .coverDiv .mainDiv .mainSec .hero-kw-orange {
    color: var(--accent-color-1); /* Orange */
-   font-family: 'Atma', sans-serif; /* Added this line */
-   font-weight: inherit; /* Inherit weight from h1/p */
-   /* Text shadow is inherited from parent h1/p in this case */
- }
- 
- .coverDiv .mainDiv .mainSec .hero-kw-green {
+   font-family: 'Atma', sans-serif;
+   font-weight: inherit;
+}
+
+.coverDiv .mainDiv .mainSec .hero-kw-green {
    color: var(--accent-color-2); /* Green */
    font-weight: inherit;
- }
- 
- .coverDiv .mainDiv .mainSec .hero-kw-blue {
+}
+
+.coverDiv .mainDiv .mainSec .hero-kw-blue {
    color: var(--primary-color); /* Blue/Purple */
    font-weight: inherit;
- }
- 
- .coverDiv .mainDiv .mainSec .hero-kw-magenta {
-   color: var(--accent-color-3); /* Magenta/Purple */
+}
+
+.coverDiv .mainDiv .mainSec .hero-kw-magenta {
+   color: envar(--accent-color-3); /* Magenta/Purple */
    font-weight: inherit;
- }
- 
- /* Ensure keywords in h1 maintain boldness if needed */
- .coverDiv .mainDiv .mainSec h1 span[class*="hero-kw-"] {
+}
+
+/* Ensure keywords in h1 maintain boldness if needed */
+.coverDiv .mainDiv .mainSec h1 span[class*="hero-kw-"] {
      font-weight: 700; /* Or inherit if h1 style is sufficient */
- }
-/* Added: Style for "Next Generation" keyword */
-.coverDiv .mainDiv .mainSec .hero-kw-nextgen {
-   color: var(--color-yellow); /* Orange */
-   font-weight: inherit; /* Inherit weight from h1 */
-   /* Text shadow is inherited from parent h1 */
- }
- 
- /* REMOVED the rule below as spans are no longer in the paragraph */
- /*
- .coverDiv .mainDiv .mainSec p span[class*="hero-kw-"] {
-     font-weight: 500;
- }
+}
 
 /* Div one starts ========================== */
 .coverDiv{
@@ -137,12 +125,11 @@ a, button {
    display: flex;
    justify-content: space-between;
    align-items: center;
-   /* Modified: Removed header background */
    background-color: transparent;
    padding-inline: max(5%, 50px);
    padding-top: 10px;
-   position: relative; /* Changed from absolute/fixed for flow */
-   z-index: 10; /* Ensure it's above the overlay */
+   position: relative;
+   z-index: 10;
 }
 
 .coverDiv .mainHeader .logoSec{
@@ -153,21 +140,18 @@ a, button {
    align-items: center;
 }
 
-/* Modified: Logo text style */
 .coverDiv .mainHeader .logoSec>span{
    font-family: var(--font-heading);
    font-weight: bold;
-   color: var(--text-on-dark); /* Use light text on potentially dark image */
+   color: var(--text-on-dark);
    padding-left: 5px;
    font-size: large;
-    /* Added: Subtle text shadow for readability */
    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
 }
 
 .coverDiv .mainHeader .logoSec img.logo {
     width: 115px;
     height: auto;
-     /* Added: Filter for potential readability on image */
     filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.6));
 }
 
@@ -189,21 +173,19 @@ a, button {
 }
 
 .coverDiv .mainHeader .navItems>span>a{
-   color: var(--text-on-dark); /* Light text */
+   color: var(--text-on-dark);
    text-decoration: none;
    padding: 10px 15px 10px;
    font-weight: 600;
    font-family: var(--font-heading);
-    /* Added: Subtle text shadow for readability */
    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
 }
 
-/* Modified: Nav link hover underline color */
 .coverDiv .mainHeader .navItems>span>a::after{
    content: " ";
    width: 0%;
    height: 3px;
-   background-color: var(--accent-color-1); /* Use Orange accent */
+   background-color: var(--accent-color-1);
    position: absolute;
    bottom: 5px;
    left: 15px;
@@ -214,24 +196,21 @@ a, button {
    width: calc(100% - 30px);
 }
 
-/* Modified: Nav link hover text color */
 .coverDiv .mainHeader .navItems>span>a:hover {
-    color: var(--accent-color-1); /* Orange accent on hover */
+    color: var(--accent-color-1);
 }
 
 .coverDiv .mainHeader .hamburgerIcon{
    display: none;
    width: auto;
    height: auto;
-   color: var(--text-on-dark); /* Light icon color */
+   color: var(--text-on-dark);
    overflow: hidden;
    cursor: pointer;
-    /* Added: Subtle text shadow for readability */
    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
 }
 
 .coverDiv .mainHeader .hamburgerIcon>i{
-   
    font-size: x-large;
 }
 
@@ -242,7 +221,7 @@ a, button {
    align-items: center;
    flex-grow: 1;
    position: relative;
-   z-index: 2; /* Ensure it's above overlay */
+   z-index: 2;
    padding: 20px;
 }
 
@@ -254,7 +233,7 @@ a, button {
    justify-content: center;
    align-items: center;
    flex-direction: column;
-   color: var(--text-on-dark); /* Light text */
+   color: var(--text-on-dark);
    animation: topSlide 1s ease-out;
 }
 
@@ -263,7 +242,6 @@ a, button {
    to{margin-top: 0%; opacity: 1;}
 }
 
-/* Modified: Hero Heading */
 .coverDiv .mainDiv .mainSec>h1{
    font-family: var(--font-heading);
    font-size: 3rem;
@@ -272,7 +250,6 @@ a, button {
    line-height: 1.3;
 }
 
-/* Modified: Hero Paragraph */
 .coverDiv .mainDiv .mainSec>p{
    width: 85%;
    max-width: 700px;
@@ -280,17 +257,16 @@ a, button {
    text-align: center;
    padding-block: 20px;
    font-weight: 400;
-   color: var(--text-on-dark); /* Light text */
+   color: var(--text-on-dark);
    opacity: 0.9;
 }
 
-/* Modified: Hero Button */
 .coverDiv .mainDiv .mainSec>a{
    text-decoration: none;
    font-family: var(--font-heading);
    font-weight: 600;
-   color: var(--text-on-light); /* Dark text on light button */
-   background-color: var(--accent-color-1); /* Orange accent background */
+   color: var(--text-on-light);
+   background-color: var(--accent-color-1);
    padding: 12px 35px;
    margin-top: 15px;
    text-decoration: none;
@@ -298,15 +274,14 @@ a, button {
    border-radius: 5px;
 }
 
-/* Modified: Hero Button Hover */
 .coverDiv .mainDiv .mainSec>a:hover{
    background-color: transparent;
-   color: var(--accent-color-1); /* Orange text */
+   color: var(--accent-color-1);
    border-color: var(--accent-color-1);
    transform: translateY(-2px);
 }
-/* Div one ends ========================== */
 
+/* Div one ends ========================== */
 
 /* Added: General Section Padding */
 .divProblem,
@@ -327,11 +302,11 @@ a, button {
 }
 
 /* Modified: Alternating Background for Section Distinction */
-.divTwo, .divFour, .divTeam { /* White background */
+.divTwo, .divFour, .divTeam {
     background-color: var(--background-light);
 }
-.divProblem, .divSeven#about, .divFive { /* Light grey background */
-    background-color: #EDF2F4; /* Slightly different light grey */
+.divProblem, .divSeven#about, .divFive {
+    background-color: #EDF2F4;
 }
 
 /* General Heading Sec ================== */
@@ -347,52 +322,47 @@ a, button {
    margin-bottom: 40px;
 }
 
-.headingSec>h1{
+.headingSec>h1, .headingSec>h2 {
    width: 100%;
    text-align: center;
    font-size: 2.2rem;
    font-family: var(--font-heading);
    font-weight: 700;
    margin-bottom: 15px;
-   color: var(--text-on-light); /* Use dark text color */
+   color: var(--text-on-light);
 }
 
-/* Assign different logo colors AND Atma font to section heading highlights */
-
-/* Problem Section Highlight (STEM Education Gap) */
 .divProblem .headingSec h1 .highlight {
-   color: var(--accent-color-1); /* Orange */
-   font-family: 'Atma', sans-serif; /* Added this line */
- }
- 
- /* Programs Section Highlight (Our Programs) */
- .divTwo .headingSec h1 .highlight {
-   color: var(--accent-color-2); /* Green */
-   font-family: 'Atma', sans-serif; /* Added this line */
- }
- 
- /* About Us Section Highlight (About) */
- .divSeven#about .headingSec h1 .highlight {
-   color: var(--accent-color-3); /* Magenta/Purple */
-   font-family: 'Atma', sans-serif; /* Added this line */
- }
- 
- /* Team Section Highlight (Team) */
- .divTeam .headingSec h1 .highlight {
-   color: var(--color-yellow);    /* Yellow */
-   font-family: 'Atma', sans-serif; /* Added this line */
- }
- 
- /* Testimonials Section Highlight (What) */
- .divFive .headingSec h1 .highlight {
-   color: var(--primary-color);   /* Blue/Purple */
-   font-family: 'Atma', sans-serif; /* Added this line */
- }
+   color: var(--accent-color-1);
+   font-family: 'Atma', sans-serif;
+}
+
+.divTwo .headingSec h1 .highlight {
+   color: var(--accent-color-2);
+   font-family: 'Atma', sans-serif;
+}
+
+.divSeven#about .headingSec h1 .highlight {
+   color: var(--accent-color-3);
+   font-family: 'Atma', sans-serif;
+}
+
+.divTeam .headingSec h1 .highlight {
+   color: var(--color-yellow);
+   font-family: 'Atma', sans-serif;
+}
+
+.divFive .headingSec h1 .highlight {
+   color: var(--primary-color);
+   font-family: 'Atma', sans-serif;
+}
+
 .headingSec>p{
    font-size: 1.1rem;
-   color: var(--text-grey); /* Use standard paragraph color */
+   color: var(--text-grey);
    line-height: 1.7;
 }
+
 /* General Heading Sec ================== */
 
 /* Modified: First section layout */
@@ -420,15 +390,13 @@ a, button {
    max-width: 1200px;
 }
 
-/* Modified: Carousel container styles */
 .divTwo .firstSec .carousel-container {
     width: 100%;
     display: flex;
-    flex-wrap: wrap; /* Default for desktop */
-    gap: 30px; /* Match .firstSec gap for desktop */
+    flex-wrap: wrap;
+    gap: 30px;
 }
 
-/* Modified: Program Card styles */
 .divTwo .firstSec .courseSec{
    flex-basis: 30%;
    min-width: 280px;
@@ -438,21 +406,19 @@ a, button {
    align-items: center;
    justify-content: flex-start;
    text-align: center;
-   background-color: var(--background-light); /* White background for cards */
+   background-color: var(--background-light);
    padding: 30px 25px;
-   border: 1px solid #e0e0e0; /* Slightly darker border */
+   border: 1px solid #e0e0e0;
    border-radius: 10px;
    transition: all 0.3s ease;
    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
 }
 
-/* Modified: Card hover effect */
 .divTwo .firstSec .courseSec:hover{
-   box-shadow: 0 8px 16px rgba(106, 90, 205, 0.15); /* Use primary color with opacity */
+   box-shadow: 0 8px 16px rgba(106, 90, 205, 0.15);
    transform: translateY(-5px);
 }
 
-/* Modified: Program Card Heading */
 .divTwo .firstSec .courseSec>h3{
    font-family: var(--font-heading);
    font-size: 1.4rem;
@@ -460,26 +426,8 @@ a, button {
    position: relative;
    padding-bottom: 12px;
    margin-bottom: 20px;
-   color: var(--accent-color-2); /* Changed to Green accent */
+   color: var(--accent-color-2);
 }
-
-/* Modified: Heading underline with cycling accent colors - REMOVED */
-/*
-.divTwo .firstSec .courseSec:nth-child(1)>h3::after { background-color: var(--accent-color-1); }
-.divTwo .firstSec .courseSec:nth-child(2)>h3::after { background-color: var(--accent-color-2); }
-.divTwo .firstSec .courseSec:nth-child(3)>h3::after { background-color: var(--accent-color-3); }
-.divTwo .firstSec .courseSec:nth-child(4)>h3::after { background-color: var(--accent-color-1); }
-
-.divTwo .firstSec .courseSec>h3::after{
-   content: " ";
-   width: 60px;
-   height: 3px;
-   position: absolute;
-   bottom: 0;
-   left: 50%;
-   transform: translateX(-50%);
-}
-*/
 
 .divTwo .firstSec .courseSec>p,
 .divTwo .firstSec .courseSec ul {
@@ -498,9 +446,8 @@ a, button {
     margin-bottom: 8px;
 }
 
-/* Added: Carousel indicators */
 .divTwo .firstSec .carousel-indicators {
-    display: none; /* Hidden by default (shown on mobile) */
+    display: none;
     margin-top: 20px;
     text-align: center;
 }
@@ -517,12 +464,12 @@ a, button {
 }
 
 .divTwo .firstSec .carousel-indicators .indicator.active {
-    background-color: var(--accent-color-2); /* Green accent */
+    background-color: var(--accent-color-2);
 }
+
 /* Div Two ends ========================== */
 
 /* Div Three starts ========================== */
-/* Modified: Campus Image Section */
 .divThree .firstSec .imgSec{
    flex-basis: 30%;
    min-width: 280px;
@@ -547,7 +494,6 @@ a, button {
    transition: transform 0.5s ease;
 }
 
-/* Modified: Image overlay */
 .divThree .firstSec .imgSec::after{
    content: var(--university);
    width: 100%;
@@ -555,10 +501,10 @@ a, button {
    position: absolute;
    top: 0;
    left: 0;
-   background-color: rgba(38, 38, 38, 0.6); /* Use dark overlay */
+   background-color: rgba(38, 38, 38, 0.6);
    transition: opacity 0.5s ease;
    opacity: 0;
-   color: var(--text-on-dark); /* Light text */
+   color: var(--text-on-dark);
    display: flex;
    justify-content: center;
    align-items: center;
@@ -572,10 +518,10 @@ a, button {
 .divThree .firstSec .imgSec:hover::after{
    opacity: 1;
 }
+
 /* Div Three ends ========================== */
 
 /* Div Four starts ========================== */
-/* Modified: Facilities Section */
 .divFour .firstSec .subSec{
    flex-basis: 30%;
    min-width: 280px;
@@ -614,7 +560,7 @@ a, button {
    font-size: 1.3rem;
    font-family: var(--font-heading);
    font-weight: 600;
-   color: var(--primary-color); /* Use primary color */
+   color: var(--primary-color);
 }
 
 .divFour .firstSec .subSec>p{
@@ -622,20 +568,21 @@ a, button {
    padding-bottom: 20px;
    color: var(--text-grey);
 }
+
 /* Div Four ends ========================== */
 
 /* Added: Styles for Team Section */
 .divTeam .firstSec .carousel-container {
     width: 100%;
     display: flex;
-    flex-wrap: wrap; /* Default for desktop */
-    gap: 30px; /* Match .firstSec gap for desktop */
+    flex-wrap: wrap;
+    gap: 30px;
 }
 
 .divTeam .firstSec .teamMember {
     flex-basis: 30%;
     min-width: 250px;
-    background-color: var(--background-light); /* White background */
+    background-color: var(--background-light);
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.05);
@@ -643,7 +590,7 @@ a, button {
     text-align: center;
 }
 .divTeam .firstSec .teamMember:hover {
-    box-shadow: 0 8px 16px rgba(106, 90, 205, 0.15); /* Primary color shadow */
+    box-shadow: 0 8px 16px rgba(106, 90, 205, 0.15);
     transform: translateY(-5px);
 }
 .divTeam .firstSec .teamMember img {
@@ -652,13 +599,13 @@ a, button {
     border-radius: 50%;
     object-fit: cover;
     margin-bottom: 20px;
-    border: 3px solid #e0e0e0; /* Light border */
+    border: 3px solid #e0e0e0;
 }
 .divTeam .firstSec .teamMember h3 {
     font-family: var(--font-heading);
     font-size: 1.3rem;
     font-weight: 600;
-    color: var(--text-on-light); /* Dark text */
+    color: var(--text-on-light);
     margin-bottom: 8px;
 }
 .divTeam .firstSec .teamMember p {
@@ -668,7 +615,7 @@ a, button {
 }
 
 .divTeam .firstSec .carousel-indicators {
-    display: none; /* Hidden by default (shown on mobile) */
+    display: none;
     margin-top: 20px;
     text-align: center;
 }
@@ -685,16 +632,15 @@ a, button {
 }
 
 .divTeam .firstSec .carousel-indicators .indicator.active {
-    background-color: var(--color-yellow); /* Yellow accent */
+    background-color: var(--color-yellow);
 }
 
 /* Div Five starts ========================== */
-/* Modified: Testimonial section */
 .divFive .firstSec .carousel-container {
     width: 100%;
     display: flex;
-    flex-wrap: wrap; /* Default for desktop */
-    gap: 30px; /* Match .firstSec gap for desktop */
+    flex-wrap: wrap;
+    gap: 30px;
 }
 
 .divFive .firstSec{
@@ -710,7 +656,7 @@ a, button {
    align-items: flex-start;
    padding: 25px;
    border-radius: 10px;
-   background-color: var(--background-light); /* White background */
+   background-color: var(--background-light);
    border: 1px solid #e0e0e0;
    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
 }
@@ -741,7 +687,6 @@ a, button {
    flex-grow: 1;
 }
 
-/* Modified: Quote style */
 .divFive .firstSec .subSec .quoteSec>p{
    font-style: italic;
    font-weight: 400;
@@ -749,17 +694,17 @@ a, button {
    line-height: 1.7;
    margin-bottom: 15px;
    position: relative;
-   padding-left: 25px; /* More space */
+   padding-left: 25px;
 }
-/* Modified: Quote mark */
+
 .divFive .firstSec .subSec .quoteSec>p::before {
     content: '“';
     position: absolute;
     left: 0;
     top: -5px;
-    font-size: 3rem; /* Larger quote mark */
-    color: var(--primary-color); /* Primary color */
-    opacity: 0.2; /* More subtle */
+    font-size: 3rem;
+    color: var(--primary-color);
+    opacity: 0.2;
     font-family: serif;
 }
 
@@ -767,14 +712,13 @@ a, button {
    font-weight: 600;
    margin-top: 8px;
    font-family: var(--font-heading);
-   color: var(--text-on-light); /* Dark text */
+   color: var(--text-on-light);
 }
 
-/* Modified: Rating stars color (using one accent) */
 .divFive .firstSec .subSec .quoteSec .rating{
    font-size: small;
    margin-top: 5px;
-   color: var(--accent-color-1); /* Orange for stars */
+   color: var(--accent-color-1);
 }
 .divFive .firstSec .subSec .quoteSec .rating .fa-star-half-stroke {
     color: var(--accent-color-1);
@@ -784,7 +728,7 @@ a, button {
 }
 
 .divFive .firstSec .carousel-indicators {
-    display: none; /* Hidden by default (shown on mobile) */
+    display: none;
     margin-top: 20px;
     text-align: center;
 }
@@ -801,17 +745,16 @@ a, button {
 }
 
 .divFive .firstSec .carousel-indicators .indicator.active {
-    background-color: var(--primary-color); /* Blue/Purple accent */
+    background-color: var(--primary-color);
 }
+
 /* Div Five ends ========================== */
 
 /* Div Six starts ========================== */
-/* Modified: CTA Section */
 .divSix{
    width: 100%;
    min-height: 350px;
-   /* Using primary color background */
-   background-color: var(--primary-color); /* Blue/Purple background */
+   background-color: var(--primary-color);
    display: flex;
    justify-content: center;
    align-items: center;
@@ -829,7 +772,7 @@ a, button {
 
 .divSix .mainSec>h1{
    font-size: 2.2rem;
-   color: var(--text-on-dark); /* Light text on dark background */
+   color: var(--text-on-dark);
    text-align: center;
    line-height: 1.4;
    text-transform: none;
@@ -839,9 +782,8 @@ a, button {
    margin-bottom: 30px;
 }
 
-/* Modified: CTA Button */
 .divSix .mainSec>a{
-   color: var(--text-on-light); /* Dark text */
+   color: var(--text-on-light);
    font-family: var(--font-heading);
    padding: 12px 35px;
    font-weight: 600;
@@ -849,26 +791,25 @@ a, button {
    text-transform: uppercase;
    margin-top: 10px;
    position: relative;
-   background-color: var(--accent-color-2); /* Green accent background */
+   background-color: var(--accent-color-2);
    border: 2px solid var(--accent-color-2);
    border-radius: 5px;
    z-index: 1;
 }
 
-/* Modified: CTA Button Hover */
 .divSix .mainSec>a:hover{
    background-color: transparent;
-   color: var(--accent-color-2); /* Green text */
+   color: var(--accent-color-2);
    border-color: var(--accent-color-2);
    transform: translateY(-2px);
 }
+
 /* Div Six ends ========================== */
 
 /* Div Seven starts ========================== */
-/* Modified: Footer section */
 .divSeven#contact {
-    background-color: var(--background-dark); /* Use dark background */
-    color: var(--text-on-dark); /* Light text */
+    background-color: var(--background-dark);
+    color: var(--text-on-dark);
     padding-bottom: 30px;
 }
 
@@ -884,7 +825,7 @@ a, button {
     margin-bottom: 15px;
 }
 .divSeven#contact .headingSec p {
-    color: rgba(240, 240, 240, 0.8); /* Use text-on-dark with opacity */
+    color: rgba(240, 240, 240, 0.8);
     font-size: 1rem;
     line-height: 1.5;
     margin-bottom: 5px;
@@ -900,39 +841,36 @@ a, button {
    overflow-y: hidden;
 }
 
-/* Modified: Social Media Icons */
 .divSeven#contact .firstSec>a{
    width: 45px;
    height: 45px;
-   background-color: rgba(240, 240, 240, 0.1); /* Transparent light background */
+   background-color: rgba(240, 240, 240, 0.1);
    border-radius: 50%;
    display: flex;
    justify-content: center;
    align-items: center;
    margin: 0 10px;
-   color: var(--text-on-dark); /* Light icon */
+   color: var(--text-on-dark);
    font-size: 1.2rem;
    text-decoration: none;
    transition: all 0.3s ease;
 }
 
-/* Modified: Social Icon Hover - Cycle through accent colors */
-.divSeven#contact .firstSec>a:nth-child(1):hover { background-color: var(--accent-color-1); color: var(--text-on-light); } /* Orange */
-.divSeven#contact .firstSec>a:nth-child(2):hover { background-color: var(--accent-color-2); color: var(--text-on-light); } /* Green */
-.divSeven#contact .firstSec>a:nth-child(3):hover { background-color: var(--accent-color-3); color: var(--text-on-light); } /* Magenta/Purple */
-.divSeven#contact .firstSec>a:nth-child(4):hover { background-color: var(--primary-color); color: var(--text-on-dark); }    /* Blue/Purple */
-.divSeven#contact .firstSec>a:nth-child(5):hover { background-color: var(--accent-color-1); color: var(--text-on-light); } /* Orange again */
+.divSeven#contact .firstSec>a:nth-child(1):hover { background-color: var(--accent-color-1); color: var(--text-on-light); }
+.divSeven#contact .firstSec>a:nth-child(2):hover { background-color: var(--accent-color-2); color: var(--text-on-light); }
+.divSeven#contact .firstSec>a:nth-child(3):hover { background-color: var(--accent-color-3); color: var(--text-on-light); }
+.divSeven#contact .firstSec>a:nth-child(4):hover { background-color: var(--primary-color); color: var(--text-on-dark); }
+.divSeven#contact .firstSec>a:nth-child(5):hover { background-color: var(--accent-color-1); color: var(--text-on-light); }
 
 .divSeven#contact .firstSec>a:hover{
    transform: translateY(-3px) scale(1.1);
 }
 
-/* Added: Copyright style */
 .divSeven#contact > p {
     text-align: center;
     margin-top: 40px;
     font-size: 0.9em;
-    color: rgba(240, 240, 240, 0.6); /* Dimmed light text */
+    color: rgba(240, 240, 240, 0.6);
 }
 
 /* Added: Generic styles for sections added in HTML (if not covered) */
@@ -942,5 +880,5 @@ a, button {
 .divTeam .headingSec,
 .divTwo .headingSec,
 .divFive .headingSec {
-    margin-bottom: 30px; /* Reduced margin to tighten spacing */
+    margin-bottom: 30px;
 }

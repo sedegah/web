@@ -1,105 +1,93 @@
 /* Responsive Styles */
 
 @media screen and (max-width: 1000px) {
-   /* Adjust flex-basis for slightly larger screens */
-   .divTwo .firstSec .courseSec,
-   .divThree .firstSec .imgSec,
-   .divFour .firstSec .subSec,
-   .divTeam .firstSec .teamMember,
-   .divFive .firstSec .subSec {
-      flex-basis: 46%; /* Allow two columns */
-      min-width: 0; /* Reset min-width if needed */
-   }
-
-   /* Keep overlay visible if design requires */
-   /* .divThree .firstSec .imgSec::after{
-      top: 0%;
-      opacity: 1;
-   } */
-}
-
-@media screen and (max-width: 900px) {
-   /* Keep hamburger menu logic */
-   .coverDiv .mainHeader .navItems{
-      width: 0%; /* Hide initially */
-      height: auto; /* Allow content height */
-      position: absolute;
-      top: 80px; /* Position below header */
-      right: 0;
-      flex-direction: column;
-      background-color: rgba(38, 70, 83, 0.95); /* Darker background for menu */
-      backdrop-filter: blur(5px);
-      padding-block: 20px;
-      transition: width 0.5s ease; /* Animate width for slide-in */
-      overflow: hidden; /* Hide overflow during transition */
-      z-index: 100; /* Ensure menu is on top */
-      border-bottom-left-radius: 10px; /* Optional styling */
-   }
-    /* Style for when menu is shown via JS */
+    .divTwo .firstSec .courseSec,
+    .divThree .firstSec .imgSec,
+    .divFour .firstSec .subSec,
+    .divTeam .firstSec .teamMember,
+    .divFive .firstSec .subSec {
+       flex-basis: 46%;
+       min-width: 0;
+    }
+ }
+ 
+ @media screen and (max-width: 900px) {
+    .coverDiv .mainHeader .navItems{
+       width: 0%;
+       height: auto;
+       position: absolute;
+       top: 80px;
+       right: 0;
+       flex-direction: column;
+       background-color: rgba(38, 70, 83, 0.95);
+       backdrop-filter: blur(5px);
+       padding-block: 20px;
+       transition: width 0.5s ease;
+       overflow: hidden;
+       z-index: 100;
+       border-bottom-left-radius: 10px;
+    }
+ 
     .coverDiv .mainHeader .navItems.active {
-        width: 250px; /* Adjust width as needed */
-        padding-inline: 20px; /* Add horizontal padding */
+        width: 250px;
+        padding-inline: 20px;
     }
     .coverDiv .mainHeader .navItems > span {
-        width: 100%; /* Make spans full width */
-        text-align: center; /* Center text */
+        width: 100%;
+        text-align: center;
     }
     .coverDiv .mainHeader .navItems > span > a {
-        display: block; /* Make links block level */
-        padding: 15px 0; /* Adjust padding */
+        display: block;
+        padding: 15px 0;
         width: 100%;
     }
-     /* Reset hover underline for mobile menu */
+ 
     .coverDiv .mainHeader .navItems > span > a::after {
         display: none;
     }
     .coverDiv .mainHeader .navItems > span:hover > a::after {
-        width: 0; /* Ensure no underline on hover */
+        width: 0;
     }
-     .coverDiv .mainHeader .navItems > span > a:hover {
-         color: var(--accent-color); /* Keep hover color */
-     }
-
-   .coverDiv .mainHeader .hamburgerIcon{
-      display: flex;
-   }
-}
-
-@media screen and (max-width: 768px) { /* Common tablet breakpoint */
-    /* Adjust hero text size */
-   .coverDiv .mainDiv .mainSec>h1{
-      font-size: 2.5rem;
-   }
-   .coverDiv .mainDiv .mainSec>p{
-      font-size: 1.1rem;
-      width: 90%;
-   }
-
-    /* Convert Programs section to carousel */
+    .coverDiv .mainHeader .navItems > span > a:hover {
+        color: var(--accent-color-1);
+    }
+ 
+    .coverDiv .mainHeader .hamburgerIcon{
+       display: flex;
+    }
+ }
+ 
+ @media screen and (max-width: 768px) {
+    .coverDiv .mainDiv .mainSec>h1{
+       font-size: 2.5rem;
+    }
+    .coverDiv .mainDiv .mainSec>p{
+       font-size: 1.1rem;
+       width: 90%;
+    }
+ 
     .divTwo .firstSec .carousel-container {
         flex-wrap: nowrap;
         overflow-x: auto;
         scroll-snap-type: x mandatory;
-        -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
-        scrollbar-width: none; /* Hide scrollbar Firefox */
-        -ms-overflow-style: none; /* Hide scrollbar IE/Edge */
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        padding-inline: 10%;
     }
     .divTwo .firstSec .carousel-container::-webkit-scrollbar {
-        display: none; /* Hide scrollbar Chrome/Safari */
+        display: none;
     }
     .divTwo .firstSec .courseSec {
-        flex-basis: 80%; /* Wider single column */
-        min-width: 80%; /* Each card takes most of viewport width */
+        flex-basis: 80%;
+        min-width: 80%;
         scroll-snap-align: center;
-        margin: 0 10px; /* Small margin for spacing */
     }
-
-    /* Show carousel indicators for Programs */
+ 
     .divTwo .firstSec .carousel-indicators {
         display: block;
     }
-
-    /* Convert Team section to carousel */
+ 
     .divTeam .firstSec .carousel-container {
         flex-wrap: nowrap;
         overflow-x: auto;
@@ -107,6 +95,7 @@
         -webkit-overflow-scrolling: touch;
         scrollbar-width: none;
         -ms-overflow-style: none;
+        padding-inline: 10%;
     }
     .divTeam .firstSec .carousel-container::-webkit-scrollbar {
         display: none;
@@ -115,13 +104,11 @@
         flex-basis: 80%;
         min-width: 80%;
         scroll-snap-align: center;
-        margin: 0 10px;
     }
     .divTeam .firstSec .carousel-indicators {
         display: block;
     }
-
-    /* Convert Testimonials section to carousel */
+ 
     .divFive .firstSec .carousel-container {
         flex-wrap: nowrap;
         overflow-x: auto;
@@ -129,6 +116,7 @@
         -webkit-overflow-scrolling: touch;
         scrollbar-width: none;
         -ms-overflow-style: none;
+        padding-inline: 10%;
     }
     .divFive .firstSec .carousel-container::-webkit-scrollbar {
         display: none;
@@ -137,173 +125,149 @@
         flex-basis: 80%;
         min-width: 80%;
         scroll-snap-align: center;
-        margin: 0 10px;
     }
     .divFive .firstSec .carousel-indicators {
         display: block;
     }
-
-    /* Adjust CTA heading */
+ 
     .divSix .mainSec>h1 {
         font-size: 1.8rem;
     }
-}
-
-@media screen and (max-width: 600px){
-    /* Further reduce hero text size */
-   .coverDiv .mainDiv .mainSec>h1{
-      font-size: 2.2rem;
-   }
-
-    /* Adjust general section padding */
-    .divProblem, .divTwo, .divSeven#about, .divTeam, .divThree, .divFour, .divFive, .divSeven#contact {
-        padding: 60px 15px; /* Less vertical padding */
+ }
+ 
+ @media screen and (max-width: 600px){
+    .coverDiv .mainDiv .mainSec>h1{
+       font-size: 2.2rem;
     }
-
-    /* Adjust general heading size */
-    .headingSec>h1 {
+ 
+    .divProblem, .divTwo, .divSeven#about, .divTeam, .divThree, .divFour, .divFive, .divSeven#contact {
+        padding: 60px 15px;
+    }
+ 
+    .headingSec>h1, .headingSec>h2 {
         font-size: 1.9rem;
     }
     .headingSec>p {
         font-size: 1rem;
     }
-}
-
-@media screen and (max-width: 500px){
-   /* Adjust root font sizes slightly if needed */
-   /* :root{ ... } */
-
-   .coverDiv .mainHeader{
-      padding-inline: 20px; /* Less padding */
-   }
-
-   .coverDiv .mainDiv .mainSec>h1{
-      font-size: 1.9rem;
-   }
-   .coverDiv .mainDiv .mainSec>p{
-      font-size: 1rem;
-      width: 95%;
-   }
-
-   /* Ensure single column cards take more width */
-   .divTwo .firstSec .courseSec,
-   .divThree .firstSec .imgSec,
-   .divFour .firstSec .subSec,
-   .divTeam .firstSec .teamMember,
-   .divFive .firstSec .subSec {
-      flex-basis: 95%; /* Almost full width */
-   }
-
-   /* Add margin between stacked cards */
-   .divTwo .firstSec .courseSec,
-   .divThree .firstSec .imgSec,
-   .divFour .firstSec .subSec,
-   .divTeam .firstSec .teamMember,
-   .divFive .firstSec .subSec {
-      margin-bottom: 25px; /* Add bottom margin when stacked */
-   }
-    .firstSec {
-        gap: 0; /* Remove gap if using margin */
+ }
+ 
+ @media screen and (max-width: 500px){
+    .coverDiv .mainHeader{
+       padding-inline: 20px;
     }
-
-    .headingSec h1 {
+ 
+    .coverDiv .mainDiv .mainSec>h1{
+       font-size: 1.9rem;
+    }
+    .coverDiv .mainDiv .mainSec>p{
+       font-size: 1rem;
+       width: 95%;
+    }
+ 
+    .divTwo .firstSec .courseSec,
+    .divThree .firstSec .imgSec,
+    .divFour .firstSec .subSec,
+    .divTeam .firstSec .teamMember,
+    .divFive .firstSec .subSec {
+       flex-basis: 95%;
+    }
+ 
+    .divTwo .firstSec .courseSec,
+    .divThree .firstSec .imgSec,
+    .divFour .firstSec .subSec,
+    .divTeam .firstSec .teamMember,
+    .divFive .firstSec .subSec {
+       margin-bottom: 25px;
+    }
+    .firstSec {
+        gap: 0;
+    }
+ 
+    .headingSec h1, .headingSec h2 {
         font-size: 1.7rem;
     }
-
-    /* Adjust carousel card size */
+ 
     .divTwo .firstSec .courseSec {
         flex-basis: 90%;
         min-width: 90%;
-        margin: 0 5px;
     }
     .divTeam .firstSec .teamMember {
         flex-basis: 90%;
         min-width: 90%;
-        margin: 0 5px;
     }
     .divFive .firstSec .subSec {
         flex-basis: 90%;
         min-width: 90%;
-        margin: 0 5px;
     }
-}
-
-@media screen and (max-width: 400px){
-   .coverDiv .mainHeader .logoSec img.logo {
-        width: 60px; /* Smaller logo */
+ }
+ 
+ @media screen and (max-width: 400px){
+    .coverDiv .mainHeader .logoSec img.logo {
+        width: 60px;
     }
-
-   .coverDiv .mainHeader .logoSec>span{
-      font-size: medium;
-   }
-   .coverDiv .mainHeader .hamburgerIcon>i{
-      font-size: large;
-   }
-
-   .coverDiv .mainDiv .mainSec>h1{
-      font-size: 1.7rem;
-   }
-   .coverDiv .mainDiv .mainSec>a {
-        padding: 10px 25px; /* Smaller button */
-   }
-
-   /* Adjust section width if needed */
-   .divTwo>section, .divThree>section, .divFour>section, .divFive>section, .divSeven>section {
-      width: 95%;
-   }
-
-   /* Testimonial layout adjustments */
-   .divFive .firstSec .subSec{
-      flex-direction: column; /* Stack image and text */
-      align-items: center; /* Center items */
-      text-align: center;
-   }
-   .divFive .firstSec .subSec .imgSec{
-      margin-right: 0;
-      margin-bottom: 15px; /* Space below image */
-   }
-   .divFive .firstSec .subSec .quoteSec{
-      width: 100%;
-      align-items: center;
-   }
-   .divFive .firstSec .subSec .quoteSec>p{
-      font-size: 0.95rem;
-      padding-left: 0; /* Remove padding */
-      text-align: center;
-   }
-   .divFive .firstSec .subSec .quoteSec>p::before {
-       display: none; /* Hide quote mark on small screens */
-   }
-   .divFive .firstSec .subSec .imgSec{
-      width: 50px;
-      height: 50px;
-   }
-
-    /* Footer social icons */
+ 
+    .coverDiv .mainHeader .logoSec>span{
+       font-size: medium;
+    }
+    .coverDiv .mainHeader .hamburgerIcon>i{
+       font-size: large;
+    }
+ 
+    .coverDiv .mainDiv .mainSec>h1{
+       font-size: 1.7rem;
+    }
+    .coverDiv .mainDiv .mainSec>a {
+        padding: 10px 25px;
+    }
+ 
+    .divTwo>section, .divThree>section, .divFour>section, .divFive>section, .divSeven>section {
+       width: 95%;
+    }
+ 
+    .divFive .firstSec .subSec{
+       flex-direction: column;
+       align-items: center;
+       text-align: center;
+    }
+    .divFive .firstSec .subSec .imgSec{
+       margin-right: 0;
+       margin-bottom: 15px;
+    }
+    .divFive .firstSec .subSec .quoteSec{
+       width: 100%;
+       align-items: center;
+    }
+    .divFive .firstSec .subSec .quoteSec>p{
+       font-size: 0.95rem;
+       padding-left: 0;
+       text-align: center;
+    }
+    .divFive .firstSec .subSec .quoteSec>p::before {
+        display: none;
+    }
+    .divFive .firstSec .subSec .imgSec{
+       width: 50px;
+       height: 50px;
+    }
+ 
     .divSeven#contact .firstSec>a {
         width: 40px;
         height: 40px;
         font-size: 1rem;
-        margin: 0 5px; /* Less margin */
+        margin: 0 5px;
     }
-
-    /* Adjust carousel card size */
+ 
     .divTwo .firstSec .courseSec {
         flex-basis: 95%;
         min-width: 95%;
-        margin: 0 2.5%;
     }
     .divTeam .firstSec .teamMember {
         flex-basis: 95%;
         min-width: 95%;
-        margin: 0 2.5%;
     }
     .divFive .firstSec .subSec {
         flex-basis: 95%;
         min-width: 95%;
-        margin: 0 2.5%;
     }
-}
-
-/* Reduced height adjustments, may not be needed */
-/* @media screen and (max-height:400px){ ... } */
+ }

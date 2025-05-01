@@ -1,25 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   <script async src="https://tally.so/widgets/embed.js"></script>
-   <link rel="icon" href="img/xlabbslogo.png">
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>XLABS GHANA</title>
+    <meta name="description" content="XLABS Ghana empowers children aged 5-16 with hands-on robotics and AI education. Enroll in our programs to spark innovation and STEM skills in Ghana's next generation.">
+    <meta name="keywords" content="robotics education Ghana, AI for kids Ghana, STEM programs Ghana, coding for children, XLABS Ghana, robotics workshops Accra">
+    <meta name="author" content="XLABS Ghana">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph Meta Tags for Social Media -->
+    <meta property="og:title" content="XLABS Ghana - Robotics & AI Education for Kids">
+    <meta property="og:description" content="Empowering Ghana's youth with robotics, coding, and AI skills through hands-on STEM programs for ages 5-16.">
+    <meta property="og:image" content="https://xlabsghana.com/img/xlabscoloredlogo.png">
+    <meta property="og:url" content="https://xlabsghana.com">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="XLABS Ghana">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="XLABS Ghana - Robotics & AI Education for Kids">
+    <meta name="twitter:description" content="Empowering Ghana's youth with robotics, coding, and AI skills through hands-on STEM programs for ages 5-16.">
+    <meta name="twitter:image" content="https://xlabsghana.com/img/xlabscoloredlogo.png">
+
+    <title>XLABS Ghana - Empowering Kids with Robotics & AI Education</title>
+    <link rel="icon" type="image/png" href="img/xlabbslogo.png">
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/index-responsive.css">
+    <script async src="https://tally.so/widgets/embed.js"></script>
     <script src="https://kit.fontawesome.com/ba1e04a511.js" crossorigin="anonymous"></script>
+
+    <!-- Schema Markup for Organization -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "XLABS Ghana",
+        "url": "https://xlabsghana.com",
+        "logo": "https://xlabsghana.com/img/xlabscoloredlogo.png",
+        "description": "XLABS Ghana provides hands-on robotics and AI education for children aged 5-16, fostering STEM skills and innovation in Ghana.",
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+233248286722",
+            "contactType": "Customer Service",
+            "email": "info@xlabsghana.com"
+        },
+        "sameAs": [
+            "https://www.instagram.com/xlabsgh/",
+            "https://www.linkedin.com/company/xlabshh/about/"
+        ]
+    }
+    </script>
 </head>
 
 <body>
     <div class="coverDiv">
         <header class="mainHeader">
             <section class="logoSec">
-                <img src="img/xlabscoloredlogo.png" class="logo" alt="XLABS GHANA Logo">
+                <img src="img/xlabscoloredlogo.png" class="logo" alt="XLABS Ghana Logo">
             </section>
 
-            <section class="navItems" id="navItems">
+            <section class="navItems" id="navItems" aria-label="Main Navigation">
                 <span><a href="#home">Home</a></span>
                 <span><a href="#programs">Our Programs</a></span>
                 <span><a href="#about">About Us</a></span>
@@ -28,134 +68,131 @@
                 <span><a href="#register">Register / Enroll</a></span>
             </section>
 
-            <section class="hamburgerIcon" id="hamburgerIcon" onclick="showMenu()">
+            <section class="hamburgerIcon" id="hamburgerIcon" onclick="showMenu()" aria-label="Toggle Menu">
                 <i class="fa-solid fa-bars"></i>
             </section>
         </header>
 
-        <div class="mainDiv" id="home">
+        <section class="mainDiv" id="home" aria-labelledby="hero-heading">
             <section class="mainSec">
-               <h1><span class="hero-kw-orange">Empowering</span> Ghana's Next Generation of Innovators with Robotics and AI</h1>
+                <h1 id="hero-heading"><span class="hero-kw-orange">Empowering</span> Ghana's Next Generation of Innovators with Robotics and AI</h1>
                 <p>
-                  Prepare your child (5-16) for the future of technology. XLABS makes learning AI and Robotics engaging and accessible through exciting, hands-on projects.
+                    Prepare your child (5-16) for the future of technology. XLABS makes learning AI and robotics engaging and accessible through exciting, hands-on projects in Ghana.
                 </p>
-                <a href="#tally-open=wgOeLN&tally-layout=modal&tally-width=500&tally-align-left=1&tally-emoji-text=👋&tally-emoji-animation=wave&tally-auto-close=3000">REGISTER / ENROLL</a>
+                <a href="#tally-open=wgOeLN&tally-layout=modal&tally-width=500&tally-align-left=1&tally-emoji-text=👋&tally-emoji-animation=wave&tally-auto-close=3000" aria-label="Register or Enroll Now">REGISTER / ENROLL</a>
             </section>
-        </div>
+        </section>
     </div>
 
-    <div class="divProblem" style="padding: 40px 20px; text-align: center;">
+    <div class="divProblem" aria-labelledby="problem-heading">
         <section class="headingSec">
-            <h1>Bridging the <span class="highlight">STEM Education Gap</span> in Ghana</h1>
+            <h1 id="problem-heading">Bridging the <span class="highlight">STEM Education Gap</span> in Ghana</h1>
             <p>
-               In Ghana, countless children encounter technology far too late in their development, missing critical opportunities to engage with tools that define the modern world. At XLABS, we are passionately committed to changing this narrative by introducing robotics and artificial intelligence to young learners at an early age. Through immersive, hands-on experiences, we empower children to cultivate essential skills like problem-solving, critical thinking, creativity, and self-confidence. We believe the future belongs to those who are equipped to shape it, and we’re dedicated to ensuring that the children of Ghana are not only prepared but are at the forefront of innovation, ready to build a brighter tomorrow with the tools and knowledge they gain today.
+                In Ghana, many children encounter technology late, missing opportunities to develop critical STEM skills. XLABS Ghana is committed to changing this by introducing robotics and artificial intelligence education early. Through hands-on STEM programs, we empower kids to build problem-solving, critical thinking, and creativity skills, preparing them to lead innovation in Ghana’s future.
             </p>
         </section>
     </div>
 
-    <div class="divTwo" id="programs">
+    <div class="divTwo" id="programs" aria-labelledby="programs-heading">
         <section class="headingSec">
-            <h1><span class="highlight">Our Programs</span> & Services</h1>
+            <h1 id="programs-heading"><span class="highlight">Our Programs</span> & Services</h1>
             <p>
-               Our programs are built to spark curiosity and build confidence in children aged 5 to 16. Using a hands-on, project-based approach, we teach robotics, coding, and the fundamentals of artificial intelligence in a way that feels exciting and relevant. Every lesson is designed to help learners think critically, solve real problems, and gain the skills needed to thrive in a tech-driven world. At XLABS, STEM isn’t just theory—it’s something kids get to build, explore, and bring to life.
+                Our STEM programs spark curiosity and confidence in children aged 5-16. Through hands-on robotics, coding, and AI workshops in Ghana, we teach critical thinking and problem-solving. XLABS makes STEM education exciting, relevant, and accessible for young innovators.
             </p>
         </section>
         <section>
             <section class="firstSec">
                 <div class="carousel-container">
-                    <section class="courseSec">
-                        <h3>Robotics Explorer Program (Ages 5-10)</h3>
+                    <section class="courseSec" aria-labelledby="robotics-explorer">
+                        <h3 id="robotics-explorer">Robotics Explorer Program (Ages 5-10)</h3>
                         <p>
-                          Our beginner-friendly Robotics Explorer Program is designed to introduce young minds to the world of robotics through fun, hands-on learning. Using the LEGO® Education SPIKE™ Kit, children build and program simple robots while picking up foundational coding concepts along the way. Each session encourages creativity, teamwork, and curiosity—laying the groundwork for strong problem-solving skills and early computational thinking.
+                            Our beginner-friendly Robotics Explorer Program introduces young minds to robotics through fun, hands-on learning. Using the LEGO® Education SPIKE™ Kit, children build and program robots while learning coding basics, fostering creativity and teamwork in Ghana.
                         </p>
                     </section>
 
-                    <section class="courseSec">
-                        <h3>Code Creators Workshop (Ages 10-15)</h3>
+                    <section class="courseSec" aria-labelledby="code-creators">
+                        <h3 id="code-creators">Code Creators Workshop (Ages 10-15)</h3>
                         <p>
-                          This workshop is perfect for learners ready to take their coding skills to the next level. Using platforms like Scratch and Python, students explore core programming concepts through hands-on lessons and real-world projects—from building games and animations to solving logic-based challenges. Along the way, they strengthen their creativity, problem-solving abilities, and confidence as young coders.
+                            Perfect for aspiring coders, this workshop teaches programming with Scratch and Python through real-world projects. Students in Ghana build games and solve challenges, enhancing creativity and logic in a supportive environment.
                         </p>
                     </section>
 
-                    <section class="courseSec">
-                        <h3>AI Workshop (Ages 12–16)</h3>
+                    <section class="courseSec" aria-labelledby="ai-workshop">
+                        <h3 id="ai-workshop">AI Workshop (Ages 12–16)</h3>
                         <p>
-                          In this forward-thinking workshop, students are introduced to the exciting world of artificial intelligence. Through interactive lessons and guided projects, they explore how AI works—from basic machine learning concepts to real-life applications like image recognition and smart assistants. Along the way, they develop critical thinking, ethical awareness, and a deeper understanding of the technology shaping their future.
+                            This workshop introduces teens in Ghana to artificial intelligence, covering machine learning and applications like image recognition. Interactive projects build critical thinking and ethical awareness for the tech-driven future.
                         </p>
                     </section>
                 </div>
-                <div class="carousel-indicators">
-                    <span class="indicator active" data-index="0"></span>
-                    <span class="indicator" data-index="1"></span>
-                    <span class="indicator" data-index="2"></span>
+                <div class="carousel-indicators" aria-label="Programs Carousel Navigation">
+                    <span class="indicator active" data-index="0" role="button" aria-label="Go to slide 1"></span>
+                    <span class="indicator" data-index="1" role="button" aria-label="Go to slide 2"></span>
+                    <span class="indicator" data-index="2" role="button" aria-label="Go to slide 3"></span>
                 </div>
             </section>
         </section>
     </div>
 
-    <div class="divSeven" id="about">
+    <div class="divSeven" id="about" aria-labelledby="about-heading">
         <section class="headingSec">
-            <h1><span class="highlight">About</span> Us</h1>
+            <h1 id="about-heading"><span class="highlight">About</span> Us</h1>
             <p>
-               XLABS was born out of a shared passion for robotics, innovation, and a desire to make a lasting impact on the next generation. It started with three high school friends who met through their school’s robotics club—united by the belief that technology could change lives, and that Ghanaian children deserved to be part of that future.
-
-               At XLABS, we believe every child can be an innovator when given the right tools early. That’s why we focus on hands-on robotics, coding, and AI education—empowering young learners to think critically, build confidently, and dream boldly. Our mission is to inspire and equip the next generation of Ghanaian innovators, and our vision is to reach over 100,000 children by 2035.
-               
-               Because the future shouldn't be gatekept. It should be built by those who dare to create it.
+                XLABS Ghana was founded by three high school friends passionate about robotics and STEM education. We provide hands-on robotics, coding, and AI programs for kids aged 5-16, empowering Ghanaian youth to innovate. Our mission is to reach 100,000 children by 2035, building a brighter future through technology.
             </p>
         </section>
     </div>
 
-    <div class="divTeam" id="team">
+    <div class="divTeam" id="team" aria-labelledby="team-heading">
         <section class="headingSec">
-             <h1>Meet Our <span class="highlight">Team</span></h1>
-             <p>Passionate Educators & Innovators United by a Shared Vision</p>
+            <h1 id="team-heading">Meet Our <span class="highlight">Team</span></h1>
+            <p>Passionate Educators & Innovators Driving STEM Education in Ghana</p>
         </section>
         <section>
             <section class="firstSec">
                 <div class="carousel-container">
-                    <section class="teamMember">
-                        <h3>Derrick Debrah</h3>
-                        <p>Chief Executive Officer (CEO): Visionary Leader with a Deep Computer Science Background & Passion for Robotics Education.</p>
+                    <section class="teamMember" aria-labelledby="derrick-debrah">
+                        <h3 id="derrick-debrah">Derrick Debrah</h3>
+                        <p>Chief Executive Officer (CEO): Visionary leader with a computer science background, advancing robotics education in Ghana.</p>
                     </section>
-                    <section class="teamMember">
-                        <h3>Habada Bright</h3>
-                        <p>Chief Operating Officer (COO): Strategic project manager with deep AI knowledge, exceptional communication skills, and award-winning experience in leading high-impact projects.</p>
+                    <section class="teamMember" aria-labelledby="habada-bright">
+                        <h3 id="habada-bright">Habada Bright</h3>
+                        <p>Chief Operating Officer (COO): Strategic manager with AI expertise, leading impactful STEM projects in Ghana.</p>
                     </section>
-                    <section class="teamMember">
-                        <h3>Fuseini Iyad</h3>
-                        <p>Chief Technology Officer (CTO): Software developer with expertise in robotics, a passion for curriculum innovation, and a proven track record of creating impactful, hands-on learning experiences.</p>
+                    <section class="teamMember" aria-labelledby="fuseini-iyad">
+                        <h3 id="fuseini-iyad">Fuseini Iyad</h3>
+                        <p>Chief Technology Officer (CTO): Software developer innovating robotics curricula for Ghana’s youth.</p>
                     </section>
                 </div>
-                <div class="carousel-indicators">
-                    <span class="indicator active" data-index="0"></span>
-                    <span class="indicator" data-index="1"></span>
-                    <span class="indicator" data-index="2"></span>
+                <div class="carousel-indicators" aria-label="Team Carousel Navigation">
+                    <span class="indicator active" data-index="0" role="button" aria-label="Go to slide 1"></span>
+                    <span class="indicator" data-index="1" role="button" aria-label="Go to slide 2"></span>
+                    <span class="indicator" data-index="2" role="button" aria-label="Go to slide 3"></span>
                 </div>
             </section>
         </section>
     </div>
 
-    <div class="divFive">
+    <div class="divFive" aria-labelledby="testimonials-heading">
         <section class="headingSec">
-            <h1><span class="highlight">What</span> Our Students & Partners Say</h1>
+            <h1 id="testimonials-heading"><span class="highlight">What</span> Our Students & Partners Say</h1>
             <p>
-                 Hear about the impact of XLABS directly from our community.
+                Discover the impact of XLABS Ghana’s STEM programs through testimonials from our community.
             </p>
         </section>
         <section>
             <section class="firstSec">
                 <div class="carousel-container">
-                    <section class="subSec" id="firstComment">
+                    <section class="subSec" id="firstComment" aria-labelledby="student-testimonial">
                         <section class="imgSec">
-                            <img src="img/student-1.jpg" alt="Student/Partner Picture">
+                            <img src="img/student-1.jpg" alt="XLABS Ghana Student Testimonial">
                         </section>
                         <section class="quoteSec">
-                            <p>
-                                “Placeholder: Insert a real quote here from a student, parent, or partner school about their positive experience with XLABS programs.”
+                            <p id="student-testimonial">
+                                “Placeholder: Insert a real quote from a student about their exciting experience with XLABS Ghana’s robotics programs.”
                             </p>
-                            <span class="name">Student/Parent/Partner Name</span>
-                            <span class="rating"> <i class="fa-solid fa-star"></i>
+                            <span class="name">Student Name</span>
+                            <span class="rating" aria-label="5 out of 5 stars">
+                                <i class="fa-solid fa-star"></i>
                                 <i class="fa-solid fa-star"></i>
                                 <i class="fa-solid fa-star"></i>
                                 <i class="fa-solid fa-star"></i>
@@ -163,16 +200,16 @@
                             </span>
                         </section>
                     </section>
-                    <section class="subSec">
+                    <section class="subSec" aria-labelledby="partner-testimonial">
                         <section class="imgSec">
-                            <img src="img/partner-1.jpg" alt="Partner Picture">
+                            <img src="img/partner-1.jpg" alt="XLABS Ghana Partner Testimonial">
                         </section>
                         <section class="quoteSec">
-                            <p>
-                                “Placeholder: Another real quote highlighting the benefits, like skill development, engagement, or partnership success.”
+                            <p id="partner-testimonial">
+                                “Placeholder: Insert a real quote from a partner school highlighting the success of XLABS Ghana’s STEM workshops.”
                             </p>
-                            <span class="name">Partner Contact Name, School/Organization</span>
-                            <span class="rating">
+                            <span class="name">Partner Contact Name, School</span>
+                            <span class="rating" aria-label="4.5 out of 5 stars">
                                 <i class="fa-solid fa-star"></i>
                                 <i class="fa-solid fa-star"></i>
                                 <i class="fa-solid fa-star"></i>
@@ -182,40 +219,38 @@
                         </section>
                     </section>
                 </div>
-                <div class="carousel-indicators">
-                    <span class="indicator active" data-index="0"></span>
-                    <span class="indicator" data-index="1"></span>
+                <div class="carousel-indicators" aria-label="Testimonials Carousel Navigation">
+                    <span class="indicator active" data-index="0" role="button" aria-label="Go to slide 1"></span>
+                    <span class="indicator" data-index="1" role="button" aria-label="Go to slide 2"></span>
                 </div>
             </section>
         </section>
     </div>
 
-    <div class="divSix" id="register">
+    <div class="divSix" id="register" aria-labelledby="cta-heading">
         <section class="overlay">
             <section class="mainSec">
-                <h1>Ready to Ignite Your Child's Passion for Technology?<br>Enroll or Partner with XLABS Today!</h1>
-                 <a href="#contact">Contact Us</a>
+                <h1 id="cta-heading">Ready to Ignite Your Child's Passion for Technology?<br>Enroll in XLABS Ghana Today!</h1>
+                <a href="#contact" aria-label="Contact Us to Enroll">Contact Us</a>
             </section>
         </section>
     </div>
 
-    <div class="divSeven" id="contact">
+    <div class="divSeven" id="contact" aria-labelledby="contact-heading">
         <section class="headingSec">
-            <h2>Contact Us</h2>
-             <p>Phone: 0248286722 (Habada Bright)</p>
-            <p>Email: <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="8de4e3ebe2cdf5e1eceffeeae5a3eee2e0">[email protected]</a></p>
-            </section>
-
-        <section class="firstSec"> 
-            <!--<a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>-->
-            <a href="https://www.instagram.com/xlabsgh/" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-            <a href="https://www.linkedin.com/company/xlabshh/about/" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
-            <!--<a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
-            <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>-->
+            <h2 id="contact-heading">Contact Us</h2>
+            <p>Phone: <a href="tel:+233248286722">0248286722</a> (Habada Bright)</p>
+            <p>Email: <a href="mailto:info@xlabsghana.com">info@xlabsghana.com</a></p>
         </section>
-         <p style="text-align: center; margin-top: 20px; font-size: 0.9em;">© 2025 XLABS GHANA. All Rights Reserved.</p>
+
+        <section class="firstSec">
+            <a href="https://www.instagram.com/xlabsgh/" aria-label="XLABS Ghana on Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/company/xlabshh/about/" aria-label="XLABS Ghana on LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+        </section>
+        <p>© 2025 XLABS Ghana. All Rights Reserved.</p>
     </div>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="js/index.js"></script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'937821dcfd79afc0',t:'MTc0NTg1OTc5OC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    <script src="js/index.js"></script>
+</body>
 </html>
